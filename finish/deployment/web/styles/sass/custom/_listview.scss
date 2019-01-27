@@ -1,0 +1,30 @@
+.mx-listview {
+    .mx-listview-list {
+        .mx-listview-empty {
+            display: none;
+        }
+    }
+    .mx-listview-item {
+        .row {
+            > div[class*="col-"] {
+                padding: 0;
+            }
+        }
+    }
+    .mx-layoutgrid {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+}
+
+.mx-listview.listview-flex {
+    .mx-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .mx-listview-item {
+            flex: 0 1 370px;
+            padding: 0 7.5px;
+        }
+    }
+}

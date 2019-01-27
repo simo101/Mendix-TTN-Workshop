@@ -1,0 +1,13 @@
+Buildfile: C:\Users\sbl\Documents\GitHub\Mendix-TTN-Workshop\finish\deployment\build_core.xml
+
+compile:
+    [javac] Compiling 2 source files to C:\Users\sbl\Documents\GitHub\Mendix-TTN-Workshop\finish\deployment\run\bin
+
+build:
+      [bnd] # addAll 'deployment/run/bnd.bnd' with ,
+      [bnd] # project (project.jar) 65 
+
+BUILD SUCCESSFUL
+Total time: 2 seconds
+
+

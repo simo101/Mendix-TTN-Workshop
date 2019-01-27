@@ -1,0 +1,1 @@
+define(["MicroflowTimer/widget/MicroflowTimer", "MobileFeatures/widget/MobileFeatures", "SprintrFeedbackWidget/SprintrFeedback"], {});

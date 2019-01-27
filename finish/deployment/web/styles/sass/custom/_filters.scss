@@ -1,0 +1,43 @@
+.list-filters{
+    padding: 15px 0 0;
+    flex-wrap: wrap;
+    .flexitem{
+        flex: 0 0 370px;
+        padding: 0 7.5px;
+        margin: 0;
+        &.flexitem-main{
+            flex: 1;
+        }
+    }
+    @media (max-width: $screen-xs){
+        .flexitem{
+            flex: 1 1 100%;
+        }
+    }
+    
+    .widget-drop-down-sort, .search-bar{
+        background: $bg-color-secondary;
+        padding: 8px 20px;
+        border-radius: 6px;
+        border: 1px solid $gray-primary;
+        margin-bottom: 15px;
+        .form-control{
+            padding: 0 30px 0 0;
+            font-size: $font-size-h5;
+            cursor: pointer;
+            border: 0;
+        }
+    }
+    
+    .search-bar{
+        button{
+            border-radius: 0;
+            right: 15px;
+            top: 12px;
+            font-size: 18px;
+            height: 38px;
+            width: 38px;
+            color: $gray-dark;
+        }
+    }
+}

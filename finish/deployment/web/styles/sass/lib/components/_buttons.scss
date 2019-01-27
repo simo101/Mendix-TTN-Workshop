@@ -1,0 +1,393 @@
+/* ==========================================================================
+   Buttons
+
+   Default Bootstrap and Mendix Buttons
+========================================================================== */
+.btn,
+.mx-button {
+    display: inline-block;
+    margin-bottom: 0;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    font-family: "Roboto Condensed",sans-serif;
+    font-weight: normal;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    border-radius: 4px;
+    box-shadow: none;
+    padding: 8px 14px;
+    background-color: $brand-default-light;
+    color: $brand-default-dark;
+    text-shadow: none;
+    font-size: 12px;
+    line-height: 1.42857;
+
+    &:hover,
+    &:focus,
+    &:active {
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+// Mendix button link
+.mx-link {
+    padding: 0;
+    color: $brand-info;
+
+    a {
+        color: inherit;
+    }
+}
+
+// Images in buttons
+.btn,
+.mx-button,
+.mx-link {
+    img {
+        margin-top: -1px;
+        //height: auto; // MXUI override who set the height on 16px default
+        height:20px;
+    }
+}
+
+// IE 8 only (mxui overwrites)
+.dj_ie8 .mx-link {
+    margin-right: 0;
+    white-space: normal;
+}
+
+
+// Buttons Alternate Style
+.btn-default {
+    @include button-variant(#fff, #333, #f0ab00);
+    border-color: #fff;
+}
+.btn-primary {
+    @include button-variant($text-light, $brand-primary, $brand-primary);
+}
+.btn-inverse {
+    @include button-variant($text-light, $brand-inverse, $brand-inverse);
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    .open > &.dropdown-toggle {
+        background-color: lighten($brand-inverse, 10%);
+        border-color: lighten($brand-inverse, 10%);
+    }
+}
+// Success appears as green
+.btn-success {
+    @include button-variant($text-light, $brand-success, $brand-success);
+}
+// Info appears as blue-green
+.btn-info {
+    @include button-variant($text-light, $brand-info, $brand-info);
+}
+// Warning appears as orange
+.btn-warning {
+    @include button-variant($text-dark, $brand-warning, $brand-warning);
+}
+// Danger and error appear as red
+.btn-danger {
+    @include button-variant($text-light, $brand-danger, $brand-danger);
+}
+// Button as link but with padding
+.btn-link {
+    border: 0;
+    background-color: transparent;
+    color: $brand-info;
+
+    &:hover {
+        background-color: transparent;
+        color: $brand-info-dark;
+    }
+}
+/* Buttons appear disabled */
+.btn-disabled {
+    opacity: 0.65;
+    filter: alpha(opacity=65); /* For IE8 and earlier */
+
+    cursor: not-allowed;
+    pointer-events: none;
+}
+// Transparent
+.btn-transparent,
+.btn-transparent:hover,
+.btn-transparent:focus {
+    border-style: none;
+    background-color: transparent;
+}
+
+// Buttons Sizes
+.btn-lg {
+    font-size: 18px;
+    padding: round(0.6 * 18px) round(1 * 18px);  // only for buttons
+    img {
+        height: 16px + 4px;
+    }
+}
+.btn-sm {
+    font-size: 10px;
+    padding: round(0.6 * 10px) round(1 * 10px);
+    img {
+        height: 10px + 4px;
+    }
+}
+
+
+/* Buttons Image */
+.btn-image {
+    padding: 0;
+    border-style: none;
+    background-color: transparent;
+    vertical-align: middle;
+
+    img {
+        height: auto; // Image set height
+        display: block; // or else the button doesn't get a width
+    }
+
+    &:hover,
+    &:focus {
+        background-color: transparent;
+    }
+}
+
+
+/* Buttons Position */
+.btn-right {
+    float: right;
+}
+.btn-left {
+    float: left;
+}
+
+/* Buttons Attached */
+.btn-attached-right {
+    margin-left: 5px;
+}
+.btn-attached-left {
+    margin-right: 5px;
+}
+.btn-attached-bottom {
+    margin-top: 5px;
+}
+.btn-attached-top {
+    margin-bottom: 5px;
+}
+
+.btn-back{
+    .glyphicon.glyphicon-chevron-left{
+        &:before{
+            content: "\e62a";
+            @extend .streamline-font;
+        }
+    }
+}
+.glyphicon.glyphicon-home{
+    &:before{
+        content: "\e3be";
+        @extend .streamline-font;
+    }
+}
+
+.glyphicon.glyphicon-time{
+    &:before{
+        content: "\e320";
+        @extend .streamline-font;
+    }
+}
+.glyphicon.glyphicon-list-alt{
+    &:before{
+        content: "\e304";
+        @extend .streamline-font;
+    }
+}
+.glyphicon .glyphicon-globe{
+    &:before{
+        content: "\e3bb";
+        @extend .streamline-font;
+    }
+
+}
+.glyphicon.glyphicon-log-out{
+    &:before{
+        content: "\e2ca";
+        @extend .streamline-font;
+    }
+}
+
+
+.glyphicon.glyphicon-chevron-right{
+    &:before{
+        content: "\e62b";
+        @extend .streamline-font;
+    }
+}
+
+.glyphicon.glyphicon-chevron-left{
+    &:before{
+        content: "\e62a";
+        @extend .streamline-font;
+    }
+}
+.glyphicon.glyphicon-save{
+    &:before{
+        content: "\e2fe";
+        @extend .streamline-font;
+    }
+}
+
+.streamline-font{
+        font-family: "streamline-24px" !important;
+        font-style: normal !important;
+        font-weight: normal !important;
+        font-variant: normal !important;
+        text-transform: none !important;
+        speak: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+}
+.img-uploader{
+    .btn{
+        background:none;
+        border:none;
+        color:$white;
+        margin: 0px auto;
+        height:240px;
+        &:before{
+            font-size:80px;
+            @extend .streamline-font;
+            content: "\e1c8";
+        }
+    }
+    text-align: center;
+
+}
+.camera-background{
+    background-image:url('../img/camera-background.jpg');
+    height:240px;
+
+}
+.btn-geo{
+    .btn{
+        margin-top:10px;
+    }
+}
+.wx-mxwx-imagecontainer-extra{
+    display:none !important;
+}
+.inspection-img{
+    cursor: pointer;
+    position: absolute;
+    left: 0%;
+    top: -70%;
+    width: 100%;
+}
+.picture-case{
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    
+}
+
+
+.transparent-btn{
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background: transparent;
+  border:0;
+  height:100%;
+  width:100%;
+  &:hover, &:focus, &:active{
+      background: transparent;
+      border: 0;
+  }
+}
+.btn-fullpage{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+button.btn.btn-orange{
+    border-radius: 0;
+    font-size: 14px;
+    background: transparent;
+    color: #fff;
+    border-color: #fff;
+    font-family: 'SAPMedium';
+    @media only screen and (max-width: 767px){
+        margin-right: 64px;
+    }
+    &:hover{
+        background: #f0ab00;
+        color: #fff;
+        border-color: #f0ab00;
+    }
+}
+
+button.btn.btn-red{
+    border-radius: 0;
+    font-size: 14px;
+    background: transparent;
+    color: #fff;
+    border-color: #fff;
+    font-family: 'SAPMedium';
+    @media only screen and (max-width: 767px){
+        margin-right: 64px;
+    }
+    &:hover{
+        background: #b90c0d;
+        color: #fff;
+        border-color: #b90c0d;
+    }
+}
+
+.slideout-button{
+    
+    font-size: 16px;
+    margin-right: -1px;
+    &:hover, &:focus{
+        
+    }
+}
+
+.slideout-container{
+    background: #333;
+    border-left: 5px solid #f0ab00; 
+    font-family: 'SAPMedium';
+}
+
+.btn-save{
+    border: 0 !important;
+    padding: 0px 10px !important;
+    height: 50px;
+}
+.btn-scan{
+    top: -11px;
+    left: -30px;
+    position: relative;
+    @extend .streamline-font;
+    @extend .icon-qr-code;
+}

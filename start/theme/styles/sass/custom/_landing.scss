@@ -1,0 +1,77 @@
+.t-main{
+    .landing-full{
+        max-height: 900px;
+    }
+}
+
+.landing-full{
+    height: calc(100vh - #{$topbar-minimalheight});
+    width: 100vw;
+    position: relative;
+    left: 0;
+    overflow: hidden; 
+    > img{
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+    }
+    .landing-content{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+ .landing-content{
+     text-align: center;
+     .mx-dataview-controls{
+         padding: 0 15px;
+     }
+    .btn{
+        font-size: $font-size-h4;
+        padding: 13px 40px;
+        @media (max-width: $screen-xs){
+            width: 100%;
+        }
+    }
+}
+
+.landing-header{
+    font-size: $landing-size-large;
+    margin: 0 0 10px;
+    @media (max-width: $screen-xs){
+        font-size: $landing-size-small;
+    }
+}
+
+.landing-subtitle{
+    font-size: 20px;
+    margin: 0 auto;
+    max-width: 450px;
+}
+
+.landing-content{
+    width: 100%;
+    div[class^="mx-name-textBox"]{
+        width: 250px;
+        margin-right: 15px;
+        margin-bottom: 15px;
+        @media (max-width: $screen-xs) {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+    .form-control{
+        background: $bg-color-secondary;
+        padding: 12px 18px;
+        border: 2px solid $gray-lighter;
+        border-radius: 3px;
+        &:focus{
+            border-color: $brand-primary;
+        }
+        &:hover, &:focus{
+            box-shadow: 0 0 5px rgba(1, 146, 204, 0.5);
+        }
+    }
+}

@@ -1,0 +1,8 @@
+Buildfile: C:\Users\sbl\Documents\GitHub\Mendix-TTN-Workshop\finish\deployment\build_core.xml
+
+clean:
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+
+

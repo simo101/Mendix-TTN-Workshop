@@ -1,0 +1,100 @@
+/* ==========================================================================
+   Atlas layout
+   
+   Extra styling for responsive layouts
+========================================================================== */
+.layout-atlas-responsive-default {
+    $sidebar-width: 320px;
+
+    @media (min-width: $screen-sm) {
+        .mx-scrollcontainer:not(.mx-scrollcontainer-open) > .region-sidebar {
+            width: $sidebar-width !important;
+        }
+    } 
+    
+    .region-sidebar {
+        .mx-layoutcontainer-wrapper{
+            width: 100% !important;
+        }
+    }
+    
+    @media (max-width: $screen-xs) {
+        .mx-scrollcontainer-open {
+            width: 1100px;
+        }
+    }
+    
+    .region-topbar{
+        background: $bg-color-secondary;
+        position: relative;
+        border-bottom: 1px solid $gray-lighter;
+        @media (max-width: $screen-sm){
+            background: $sidebar-bg;
+        }
+        .mobile-topcontent{
+            width: 100%;
+            position: relative;
+            min-height: $topbar-minimalheight;
+            display: none;
+            align-items: center;
+            padding: 0 15px;
+            @media (max-width: $screen-sm){
+                display: flex;
+            }
+        }
+        .navbar-content{
+            flex: 1;
+            text-align: center;
+        }
+        .userbar{
+            background: $bg-color-secondary;
+            display: flex;
+            width: 100%;
+            align-items: center;
+            flex-direction: row;
+            .mx-placeholder{
+                width: 100%;
+                >.mx-dataview{
+                    width: 100%;
+                    min-height: $topbar-minimalheight;
+                    padding: 0 15px;
+                    display: flex;
+                    align-items: center;
+                    >.mx-dataview-content{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .region-sidebar{
+        .mx-layoutcontainer-wrapper{
+            z-index: 2;
+        }
+        .sidebar-content{
+            padding: 15px;
+            min-height: $topbar-minimalheight;
+        }
+        .sidebar-brand{
+            width: 100%;
+            display: block;
+            float: none;
+            height: auto;
+            img{
+                display: inline-block;
+                @if $brand-logo !=false {
+                    width: 0;
+                    height: 0;
+                    padding: ($brand-logo-height / 2) ($brand-logo-width / 2);
+                    background-image: url($brand-logo);
+                    background-repeat: no-repeat;
+                    background-position: left center;
+                    background-size: $brand-logo-width;
+                } @else {
+                    width: auto;
+                    height: $brand-logo-height;
+                }
+            }
+        }
+    }
+}

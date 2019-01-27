@@ -1,0 +1,202 @@
+/* ==========================================================================
+   Layout
+
+   Default Mendix Layout
+========================================================================== */
+.profile-phone {
+    
+    .header{
+        font-size: 18px;
+        display: block;
+        font-family: 'SAPMedium';
+        margin-bottom: 5px;
+    }
+	.region-topbar {
+		min-height: $m-header-height;
+		border: 0;
+	}
+	.region-content{
+		background: #fff;
+	}
+	.region-footer{
+		//background: #333;
+		//border: none;
+		padding: 0px;
+		.mx-menubar{
+			background:none;
+			margin:0px;
+		}
+	}
+	.mx-listview-empty{
+		border-radius:0px !important;
+	}
+
+	.chart-section{
+		background: #333;
+	}
+    
+    .section-grey{
+        background-color: #fff;
+        background: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#cecece));
+        background: -webkit-linear-gradient(top,#fff,#cecece);
+        background: -moz-linear-gradient(top,#fff,#cecece);
+        background: -ms-linear-gradient(top,#fff,#cecece);
+        background: -o-linear-gradient(top,#fff,#cecece);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff,endColorstr=#cecece,GradientType=0);
+    }
+	.details-view{
+		text-align: center;
+		padding-top: 0;
+		padding-bottom: 5px;
+		.icon{
+			top: 10px;
+		}
+		&:after{
+			clear: both;
+			display: table;
+			content: " ";
+
+		}
+		h1{
+			position: relative;
+			top: 0;
+			margin-left: 0px;
+		}
+		.icon{
+			&.icon-thermometer-high{
+				&:before {
+					color: #9575cd;
+				}
+			}
+			&.icon-lightbulb-2{
+				&:before{
+					color:$yellow;
+				}
+			}
+			&.icon-heavy-rain{
+				&:before{
+					color:$lt-blue;
+				}
+			}
+			&.icon-cursor-move{
+				&:before{
+					color:$red;
+				}
+			}
+		}
+	}
+	.sensor-text{
+	 display: block;
+	 position: absolute;
+	 bottom: -15px;
+	 font-size: 5vw;
+	 text-transform: lowercase;
+	 text-align: center;
+  	width: 100vw;
+  }
+	.asset-values{
+		.asset-details{
+			display: inline-block;
+		}
+		h1{
+			color: $white;
+			margin-bottom: 0;
+			margin-top: 0;
+			font-size: 8vh;
+			&:after {
+				font-size: 3vh;
+				position: relative;
+				bottom: 0;
+				left: 5px;
+				color: #9BE6F8;
+			}
+			&.temp{
+				&:after{
+					content:"°C";
+				}
+			}
+			&.humidity{
+				&:after{
+					content:"%";
+				}
+			}
+			&.light{
+				&:after{
+					content:"Lux";
+				}
+			}
+			&.movement{
+				&:after{
+					content:"x";
+				}
+			}
+
+		}
+		h3{
+			color:$white;
+		}
+	}
+	.phone-homepage{
+		.region-content{
+			//background:darken($dark-blue,15%);
+		}
+		.arrow{
+			color:#fff;
+			padding-top:50px;
+		}
+	}
+}
+
+
+.carousel{
+	.item{
+		background:transparent;
+	}
+}
+.carousel-indicators{
+	   bottom: 10px;
+}
+
+.carousel {
+	.mx-dataview-content{
+		overflow: hidden !important;
+	}
+    height: calc(100vh - 380px);
+		.carousel-inner{
+			height: 100%;
+			width: 100%;
+			.item{
+				height: 100%;
+				padding-top: calc((100% - 250px)/2);
+				padding-bottom: calc((100% - 250px)/2);
+			}
+		}
+}
+.profile-phone{
+	.notifications,.inspections{
+		li {
+			.mx-dataview-content{
+				overflow:hidden !important;
+			}
+			h3{
+				margin-top:0px;
+			}
+			.icon{
+				font-size: 13vw;
+    			top: 8px;
+				left:0px;
+				&:before{
+					color:$dark-blue;
+				}
+			}
+		}
+
+	}
+	.notifications{
+		li{
+			h3{
+				margin-top:8px;
+			}
+		}
+	}
+}

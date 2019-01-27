@@ -1,0 +1,10 @@
+Buildfile: C:\Users\sbl\Documents\GitHub\Mendix-TTN-Workshop\finish\deployment\build_core.xml
+
+deploy:
+     [copy] Copying 45 files to C:\Users\sbl\Documents\GitHub\Mendix-TTN-Workshop\finish\deployment
+     [copy] Copying 5 files to C:\Users\sbl\Documents\GitHub\Mendix-TTN-Workshop\finish\deployment\model\lib\userlib
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+
+

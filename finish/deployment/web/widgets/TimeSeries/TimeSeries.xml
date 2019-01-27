@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="com.mendix.widget.custom.TimeSeries.TimeSeries" needsEntityContext="true" xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../../xsd/widget.xsd">
+    <name>Time series</name>
+    <description>Renders a time series chart</description>
+    <icon>iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAxlBMVEUAAAD///+Av/9Vxv9Ns/9mZmZdXV1Jtv9VuP9Ns/9aWlpJsPlYWFhWVlZJsvtMs/dLsfdJsvdLsPhKsfhJs/hJsvhXV1dWVlZIsfpKsvdIsvdKs/dXV1dWVlZKsflJsPhWVlZVVVVIsPhKsfhJsfdJsPhIsfhWVlZJsfhVVVVJsfhJsfhIsfhJsPhJsfhWVlZJsfdVVVVIsfdIsPdJsfdIsPdIsPdJsfhJsfhVVVVJsfhVVVVVVVVJsPhVVVVWVlZIsPdVVVWbt8UIAAAAQHRSTlMAAQQJCgoLDhIeIioxOz9AQUJERUZJVVZfYGNkbW58iJWWm5ygrK2vvcnR1dvc3d/h4+Xm6uzt7vX1+Pn7/Pz9Ex9SxQAAAY1JREFUeAHtl9lu4kAQRQubZVhghhkGkpCYJSQsYAgJCwQI7f//qVSD+4rkwSrTUp58JCzdhz7VVZZFNyWAQme2D8TsZ50CfaG+DWKyrdMFZXl18FEmkBoGVzBMkaHB8fiQITGZ+yMvaSD3ObUpFm1e0keacypRLEq8ZI6045SlWGR5yQ4pYEgO1vykIBEkgspkUrUR5FZKvTrxBH98v4rgKaYmFaDmwjVhrZhHsQA1mwiapSMVoOaIENCDRICaqoKg6YoFqPmMMEAPIoGu+c6/Qz4M619L3YNEgJreiB8tE6iLHiIE6oJ17o6fK5e8U6Aaevj/okIiBR65etfNcAPkmB6KGyURrHJELf0mww2Q6SE9VhLB6dPJH8JZehxMDz0VIaBvPJlxEJkebhXTk36NFTMO5tzDQA9gnJYKaIQNhD1oNkUSC5pmA+iBuSG5wF2c3wd6wACEAqr6/m+EmsIAJAIAnDcM4DoB/Z1O/yX/TIkgUmB90LQ+6loftq2P+9YXDusrj/2ly+ral/AJw50cdGPo4JoAAAAASUVORK5CYII=</icon>
+    <properties>
+        <property key="series" type="object" isList="true">
+            <caption>Series</caption>
+            <category>Chart properties</category>
+            <description>Add series and configure their properties</description>
+            <properties>
+                <property key="seriesType" type="enumeration" defaultValue="static">
+                    <caption>Series</caption>
+                    <category>Data source</category>
+                    <description/>
+                    <enumerationValues>
+                        <enumerationValue key="static">Static</enumerationValue>
+                        <enumerationValue key="dynamic">Dynamic</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="dataEntity" type="entity" allowNonPersistableEntities="true">
+                    <caption>Entity</caption>
+                    <category>Data source</category>
+                    <description>The entity from which the data values will be retrieved</description>
+                </property>
+                <property key="dataSourceType" type="enumeration" defaultValue="XPath">
+                    <caption>Data source</caption>
+                    <category>Data source</category>
+                    <description/>
+                    <enumerationValues>
+                        <enumerationValue key="XPath">Database</enumerationValue>
+                        <enumerationValue key="microflow">Microflow</enumerationValue>
+                        <enumerationValue key="REST">REST endpoint</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="restUrl" type="string" required="false">
+                    <caption>REST URL</caption>
+                    <category>Data source</category>
+                    <description>Relative or full URL to REST endpoint</description>
+                </property>
+                <property key="entityConstraint" type="entityConstraint" entityProperty="dataEntity" required="false">
+                    <caption>XPath constraint</caption>
+                    <category>Data source</category>
+                    <description>The constraint on the data from the entity (used when the data source is Database)</description>
+                </property>
+                <property key="dataSourceMicroflow" type="microflow" required="false">
+                    <caption>Microflow</caption>
+                    <category>Data source</category>
+                    <description>Returns a list of data values</description>
+                    <returnType type="Object" entityProperty="dataEntity" isList="true"/>
+                </property>
+                <property key="xValueAttribute" type="attribute" entityProperty="dataEntity" isPath="optional" pathType="reference">
+                    <caption>X-axis data attribute</caption>
+                    <category>Data points</category>
+                    <description>For data source Database, attributes over reference are supported with a maximum of one level deep. For data source Microflow, references are not supported.</description>
+                    <attributeTypes>
+                        <attributeType name="DateTime"/>
+                    </attributeTypes>
+                </property>
+                <property key="yValueAttribute" type="attribute" entityProperty="dataEntity">
+                    <caption>Y-axis data attribute</caption>
+                    <category>Data points</category>
+                    <description/>
+                    <attributeTypes>
+                        <attributeType name="Decimal"/>
+                        <attributeType name="Long"/>
+                        <attributeType name="Integer"/>
+                    </attributeTypes>
+                </property>
+                <property key="mode" type="enumeration" defaultValue="lines">
+                    <caption>Border</caption>
+                    <category>Appearance</category>
+                    <description/>
+                    <enumerationValues>
+                        <enumerationValue key="none">No</enumerationValue>
+                        <enumerationValue key="lines">Yes</enumerationValue>
+                        <enumerationValue key="linesXmarkers">Yes with markers</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="lineStyle" type="enumeration" defaultValue="linear">
+                    <caption>Border style</caption>
+                    <category>Appearance</category>
+                    <description/>
+                    <enumerationValues>
+                        <enumerationValue key="linear">Straight</enumerationValue>
+                        <enumerationValue key="spline">Curved</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="fill" type="boolean" defaultValue="true">
+                    <caption>Fill area</caption>
+                    <category>Appearance</category>
+                    <description>Fill area between data point and x-axis</description>
+                </property>
+                <property key="name" type="translatableString">
+                    <caption>Series name</caption>
+                    <category>Static series</category>
+                    <description/>
+                    <translations>
+                        <translation lang="en_US">Series</translation>
+                        <translation lang="nl_NL">Serie</translation>
+                    </translations>
+                </property>
+                <property key="lineColor" type="string" required="false">
+                    <caption>Line color</caption>
+                    <category>Static series</category>
+                    <description>Color of the line e.g. green, #00FF00, rgb(0,255,0)</description>
+                </property>
+                <property key="fillColor" type="string" required="false">
+                    <caption>Area color</caption>
+                    <category>Static series</category>
+                    <description>By default, the border color with transparency is used</description>
+                </property>
+                <property key="seriesEntity" type="entity" required="false" allowNonPersistableEntities="true" isPath="yes" pathType="reference" entityProperty="dataEntity">
+                    <caption>Series entity</caption>
+                    <category>Dynamic series</category>
+                    <description>The entity from which the series values will be retrieved</description>
+                </property>
+                <property key="seriesNameAttribute" type="attribute" entityProperty="seriesEntity" required="false">
+                    <caption>Series name attribute</caption>
+                    <category>Dynamic series</category>
+                    <description/>
+                    <attributeTypes>
+                        <attributeType name="String"/>
+                        <attributeType name="Enum"/>
+                    </attributeTypes>
+                </property>
+                <property key="colorAttribute" type="attribute" entityProperty="seriesEntity" required="false">
+                    <caption>Line color attribute</caption>
+                    <category>Dynamic series</category>
+                    <description>Color of the line e.g. green, #00FF00, rgb(0,255,0)</description>
+                    <attributeTypes>
+                        <attributeType name="String"/>
+                        <attributeType name="Enum"/>
+                    </attributeTypes>
+                </property>
+                <property key="fillColorAttribute" type="attribute" entityProperty="seriesEntity" required="false">
+                    <caption>Area color attribute</caption>
+                    <category>Dynamic series</category>
+                    <description>By default, the border color with transparency is used</description>
+                    <attributeTypes>
+                        <attributeType name="String"/>
+                        <attributeType name="Enum"/>
+                    </attributeTypes>
+                </property>
+                <property key="onClickEvent" type="enumeration" defaultValue="doNothing">
+                    <caption>On click</caption>
+                    <category>Events</category>
+                    <description/>
+                    <enumerationValues>
+                        <enumerationValue key="doNothing">Do nothing</enumerationValue>
+                        <enumerationValue key="showPage">Show a page</enumerationValue>
+                        <enumerationValue key="callMicroflow">Call a microflow</enumerationValue>
+                        <enumerationValue key="callNanoflow">Call a nanoflow</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="onClickPage" type="form" required="false">
+                    <caption>On click page</caption>
+                    <category>Events</category>
+                    <description>The page that will be opened on click</description>
+                </property>
+                <property key="openPageLocation" type="enumeration" defaultValue="content">
+                    <caption>Open page as</caption>
+                    <category>Events</category>
+                    <description/>
+                    <enumerationValues>
+                        <enumerationValue key="content">Full page</enumerationValue>
+                        <enumerationValue key="popup">Popup</enumerationValue>
+                        <enumerationValue key="modal">Blocking popup</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="onClickMicroflow" type="microflow" required="false" entityProperty="dataEntity">
+                    <caption>On click microflow</caption>
+                    <category>Events</category>
+                    <description>The microflow that will be executed on click</description>
+                    <returnType type="Void" />
+                </property>
+                <property key="onClickNanoflow" type="nanoflow" required="false" entityProperty="dataEntity">
+                    <caption>On click nanoflow</caption>
+                    <category>Events</category>
+                    <description>The nanoflow that will be executed on click</description>
+                    <returnType type="Void" />
+                </property>
+                <property key="tooltipForm" type="form" required="false">
+                    <caption>Tooltip form</caption>
+                    <category>Events</category>
+                    <description>The form to show when a user hovers over a chart plot point</description>
+                </property>
+                <property key="seriesOptions" type="string" multiline="true" required="false">
+                    <caption>Options</caption>
+                    <category>Advanced</category>
+                    <description>The Plotly series options as JSON</description>
+                </property>
+            </properties>
+        </property>
+        <property key="xAxisLabel" type="string" required="false">
+            <caption>X-axis label</caption>
+            <category>Chart properties</category>
+            <description/>
+        </property>
+        <property key="yAxisLabel" type="string" required="false">
+            <caption>Y-axis label</caption>
+            <category>Chart properties</category>
+            <description/>
+        </property>
+        <property key="showLegend" type="boolean" defaultValue="true">
+            <caption>Show legend</caption>
+            <category>Chart properties</category>
+            <description/>
+        </property>
+        <property key="grid" type="enumeration" defaultValue="horizontal">
+            <caption>Show grid</caption>
+            <category>Chart properties</category>
+            <description/>
+            <enumerationValues>
+                <enumerationValue key="none">None</enumerationValue>
+                <enumerationValue key="horizontal">Horizontal</enumerationValue>
+                <enumerationValue key="vertical">Vertical</enumerationValue>
+                <enumerationValue key="both">Horizontal and vertical</enumerationValue>
+            </enumerationValues>
+        </property>
+        <property key="rangeMode" type="enumeration" defaultValue="tozero">
+            <caption>Y-axis range mode</caption>
+            <category>Chart properties</category>
+            <description>Controls the y-axis range. "From zero" starts the y-axis from zero. "Auto" sets the range based on the plotted values. "Non-negative" only shows a range of positive values. If the series "Fill area" property is set to "yes", the range mode is set to "From zero" by default.</description>
+            <enumerationValues>
+                <enumerationValue key="normal">Auto</enumerationValue>
+                <enumerationValue key="tozero">From zero</enumerationValue>
+                <enumerationValue key="nonnegative">Non-negative</enumerationValue>
+            </enumerationValues>
+        </property>
+        <property key="showRangeSlider" type="boolean" defaultValue="false">
+            <caption>Show range slider</caption>
+            <category>Chart properties</category>
+            <description/>
+        </property>
+        <property key="refreshInterval" type="integer" defaultValue="0">
+            <caption>Refresh interval (ms)</caption>
+            <category>Chart properties</category>
+            <description>Refresh the chart on milliseconds interval, when set to 0 refresh is disabled</description>
+        </property>
+        <property key="widthUnit" type="enumeration" defaultValue="percentage">
+            <caption>Width unit</caption>
+            <category>Appearance</category>
+            <description/>
+            <enumerationValues>
+                <enumerationValue key="percentage">Percentage</enumerationValue>
+                <enumerationValue key="pixels">Pixels</enumerationValue>
+            </enumerationValues>
+        </property>
+        <property key="width" type="integer" defaultValue="100">
+            <caption>Width</caption>
+            <category>Appearance</category>
+            <description/>
+        </property>
+        <property key="heightUnit" type="enumeration" defaultValue="percentageOfWidth">
+            <caption>Height unit</caption>
+            <category>Appearance</category>
+            <description>'Percentage of width' is the aspect ratio, 'Pixels' is absolute. Warning: When using 'Percentage of parent' the parent container must have an absolute height, else nothing is displayed.</description>
+            <enumerationValues>
+                <enumerationValue key="percentageOfWidth">Percentage of width</enumerationValue>
+                <enumerationValue key="pixels">Pixels</enumerationValue>
+                <enumerationValue key="percentageOfParent">Percentage of parent</enumerationValue>
+            </enumerationValues>
+        </property>
+        <property key="height" type="integer" defaultValue="75">
+            <caption>Height</caption>
+            <category>Appearance</category>
+            <description/>
+        </property>
+        <property key="restParameters" type="object" isList="true" required="false">
+            <caption>REST parameters</caption>
+            <category>REST</category>
+            <description>Add parameters to REST request, The contextId, and series name are provided by default</description>
+            <properties>
+                <property key="parameterAttribute" type="attribute">
+                    <caption>Attribute</caption>
+                    <category>Attribute</category>
+                    <description/>
+                    <attributeTypes>
+                        <attributeType name="String"/>
+                        <attributeType name="Decimal"/>
+                        <attributeType name="Long"/>
+                        <attributeType name="Integer"/>
+                        <attributeType name="DateTime"/>
+                        <attributeType name="Enum"/>
+                    </attributeTypes>
+                </property>
+            </properties>
+        </property>
+        <property key="devMode" type="enumeration" defaultValue="basic">
+            <caption>Mode</caption>
+            <category>Advanced</category>
+            <description>The developer option adds a button to the charts when running the app which can be used to toggle a live editor for the advanced configuration options.</description>
+            <enumerationValues>
+                <enumerationValue key="basic">Basic</enumerationValue>
+                <enumerationValue key="advanced">Advanced</enumerationValue>
+                <enumerationValue key="developer">Developer</enumerationValue>
+            </enumerationValues>
+        </property>
+        <property key="layoutOptions" type="string" required="false" multiline="true">
+            <caption>Layout options</caption>
+            <category>Advanced</category>
+            <description>The JSON containing the Plotly layout options</description>
+        </property>
+        <property key="configurationOptions" type="string" required="false" multiline="true">
+            <caption>Configuration options</caption>
+            <category>Advanced</category>
+            <description>The JSON containing the Plotly configuration options</description>
+        </property>
+    </properties>
+</widget>

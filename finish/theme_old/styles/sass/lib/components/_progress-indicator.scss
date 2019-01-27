@@ -1,0 +1,58 @@
+.mx-progress {
+	font-size: 12px;
+	position: fixed;
+	color: transparent;
+	border-top: 0.5em solid $brand-warning;
+	border-right: 0.5em solid $brand-warning;
+	border-bottom: 0.5em solid transparent;
+	border-left: 0.5em solid transparent;
+	-webkit-animation: load8 1.75s infinite linear;
+	animation: load8 1.75s infinite linear;
+	background: transparent;
+	top: 35%;
+}
+.mx-progress,
+.mx-progress:after {
+  border-radius: 50%;
+  width: 8em;
+  height: 8em;
+  
+}
+
+.profile-phone{
+    .mx-progress, .mx-progress:after {
+        border-radius: 50%;
+        width: 8em;
+        height: 8em;
+        top:40%;
+    }
+}
+
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.mx-progress-indicator {
+	display: none;
+}
+
+.mx-progress-message {
+	display: none;
+}

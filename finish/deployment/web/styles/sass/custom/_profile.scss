@@ -1,0 +1,54 @@
+.profile-form{
+    @media (max-width: $screen-xs){
+        width: 100%;
+    }
+    .mx-fileinput{
+        input[type=file], input[type=text]{
+            @extend .appearance-none;
+        }
+         .form-control{
+             width: 0;
+             padding: 0;
+             border: 0;
+             height: 0;
+             display: none;
+         }
+        .mx-wrapped-form, .mx-normal-form{
+            max-width: 170px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            @media (max-width: $screen-xs){
+                max-width: 100%;
+            }
+            input[type=file]{
+                position: relative;
+                font-size: inherit;
+                padding: 15px 32px;
+                background: transparent;
+                color: transparent;
+                opacity: 0;
+                cursor: pointer !important;
+                width: 100%;
+                right: 0;
+                @extend .appearance-none;
+            }
+            &:before{
+                background: $brand-primary;
+                border-color: $brand-primary;
+                content: "Upload photo";
+                color: $font-alt-color;
+                font-size: $font-size-h5;
+                padding: 15px 32px;
+                position: absolute;
+                border-radius: 3px;
+                left: 0;
+                top: 1px;
+                width: 100%;
+            }
+        }
+         .mx-fileinput-upload-button{
+             display: none;
+         }
+     }
+}

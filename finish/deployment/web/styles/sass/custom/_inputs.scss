@@ -1,0 +1,59 @@
+.form-control{
+    display: block;
+    width: 100%;
+    padding: 5px 0 10px;
+    border: 0;
+    border-bottom: 2px solid #DFE1EB;
+    border-radius: 0;
+    background: transparent;
+    font-weight: $font-weight-normal;
+    font-size: $font-size-h3;
+    min-height: 43px;
+    &:focus{
+        background: transparent;
+    }
+}
+
+.form-group{
+    padding-bottom: 15px;
+    position: relative;
+    .control-label{
+        color: $gray-dark;
+        font-size: $font-size-h6;
+        font-weight: $font-weight-semibold;
+        font-family: $font-family-header;
+        margin-bottom: 0;
+        line-height: 1;
+        text-transform: capitalize;
+    }
+    .form-control{
+        font-weight: $font-weight-semibold;
+        &::-webkit-input-placeholder{
+            color: $gray;
+            font-weight: $font-weight-normal;
+        }
+    }
+}
+
+.has-error .form-control {
+    border-color: $brand-danger;
+    box-shadow: none;
+    &:focus{
+        box-shadow: none;
+    }
+}
+
+.mx-validation-message{
+    border: 0;
+    background: transparent;
+    padding: 0;
+    color: $brand-danger;
+    white-space: pre-wrap;
+    max-width: 375px;
+}
+
+.dijitCalendarContainer {
+    .dijitCalendarHoveredDate{
+        background-color: $gray-lighter;
+    }
+}

@@ -1,0 +1,70 @@
+.layout-atlas {
+    // Topbar
+    .region-topbar {
+        box-shadow: none;
+        background: $topbar-bg;
+        border: 0;
+        position: relative;
+        top: 0;
+        width: 100%;
+        &:before{
+            display: none;
+        }
+        .topbar-content{
+            align-items: center;
+            align-content: flex-end;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            .mx-placeholder{
+                width: auto;
+            }
+            .navbar-brand{
+                flex: 1;
+                display: block;
+                height: 100%;
+            }
+            
+        }
+        .toggle-btn{
+            padding: 0;
+            margin-right: 0;
+        }
+    }
+    .region-sidebar{
+        position: relative;
+        .mx-layoutcontainer-wrapper{
+            overflow: hidden;
+            .mx-dataview{
+                .mx-dataview-content{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    flex-wrap: nowrap;
+                }
+            }
+        }
+    }
+}
+
+.navbar-brand, .sidebar-brand{
+    position: relative;
+}
+
+ .brand-description{
+    margin-left: 7px;
+    color: $font-alt-color;
+    font-weight: $font-weight-normal;
+    font-size: $font-size-h4;
+    letter-spacing: -.8px;
+    position: relative;
+    top: 2px;
+}
+
+.topbar-usermessage{
+    span{
+        +span{
+            margin-left: 5px;
+        }
+    }
+}

@@ -1,0 +1,87 @@
+.card.cardprofile {
+    padding: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    text-align: center; 
+    height: 300px;
+    position: relative;
+    .card-header{
+        min-height: 100px;
+        background-color: $sidebar-bg
+    }
+    .card-body{
+        margin-top: -50px;
+        padding: 0 15px 80px;
+        img{
+            margin-bottom: 15px;
+        }
+    }
+    .card-bottom{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        display: flex;
+    }
+    .btn{
+      flex: 1;  
+      margin: 0;
+        +.btn{
+            margin-left: 15px;
+        }
+    }
+}
+
+.card{
+    padding-bottom: 0;
+    margin-bottom: 30px;
+    .mx-dataview-controls{
+        padding: 15px 0;
+    } 
+}
+
+.card.cardform{
+    padding: 30px;
+    background: #fff;
+    border: 0;
+    margin-bottom: 0;
+    margin-top: 30px;
+    .card-title{
+        margin-bottom: 15px;
+    }
+    .form-group{
+        padding-bottom: 0;
+    }
+    .control-label{
+        margin-bottom: 8px;
+    }
+    .form-control{
+        width: 100%;
+        padding: 8px 12px;
+        color: $gray-darker;
+    }
+}
+
+.card.card-documents{
+    padding: 30px;
+    @media (min-width: $screen-md){
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    @media (max-width: $screen-sm){
+        padding: 15px;
+    }
+    .mx-listview{
+        .mx-listview-item:first-child{
+            margin-top: 30px;
+            @media (max-width: $screen-sm){
+                margin-top: 15px;
+            }
+        }
+        .mx-listview-item:last-child{
+            margin-bottom: 0px;
+        }
+    }
+}

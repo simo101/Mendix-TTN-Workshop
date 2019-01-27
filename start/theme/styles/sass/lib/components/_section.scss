@@ -1,0 +1,152 @@
+.sensor-cont{
+  position: relative;
+  padding-left: 40px;
+  &:before{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    font-size: 30px;
+    font-family: $font-icons;
+  }
+  &.noise{
+    @extend .icon-cursor-move;
+    &:before{
+      color: $red;
+    }
+  }
+  &.temp{
+    @extend .icon-thermometer-medium;
+    &:before{
+       color: $purple;
+    }
+  }
+  &.light{
+    @extend .icon-lightbulb-2;
+    &:before{
+       color: $yellow;
+    }
+  }
+  &.humidity{
+    @extend .icon-heavy-rain;
+    &:before{
+       color: $blue;
+    }
+  }
+  h6{
+        color: #4F8390;
+        text-transform: lowercase;
+        font-size: .8em;
+  }
+}
+
+.measure{
+  &:after{
+    font-size:14px;
+    position: relative;
+    top:0px;
+    left:5px;
+    color: $cyan;
+  }
+  &.db{
+    &:after{
+      content:"X";
+    }
+  }
+
+  &.temp{
+    &:after{
+      content:"ºC";
+    }
+  }
+
+  &.light{
+    &:after{
+      content:"Lux";
+    }
+  }
+  &.percent{
+    &:after{
+      content:"%";
+    }
+  }
+}
+.section-grey{
+    padding: 30px 0px;
+}
+
+.section{
+      padding: 30px 15px;
+  background: $white;
+  display: block;
+  .sensor-title{
+    margin-top:0;
+    color: #4FC9E8;
+    display: block;
+  }
+  .section-info{
+    color: #8DB2BA;
+    font-size: 1.3em;
+    margin-top:15px;
+    margin-bottom: 15px;
+    display: block;
+  }
+  .sensor-description{
+    display:block;
+    font-size: 1.1em;
+    color: #065063;
+    font-weight: 400;
+    margin: .4em 0;
+    &:before{
+      content: "\e345";
+      font-family: $font-icons;
+      position:relative;
+      top:3px;
+      margin-right:5px;
+    }
+  }
+  .sensor-value{
+    display: block;
+    font-size: 1.1em;
+    color: #065063;
+    font-weight: 400;
+    margin: .4em 0;
+    &:before{
+      content: "\e35b";
+      font-family: $font-icons;
+      position:relative;
+      top: 3px;
+      margin-right:5px;
+    }
+  }
+}
+
+.dashboard-group{
+    padding: 8px 0;
+    margin-bottom: 20px;
+}
+
+.map-container{
+    position: relative;
+    .map {
+      > div{
+        height:100%;
+        width:100%;
+      }
+   }
+    .map-ship-container{
+        height:auto;
+    
+        }
+        > div{
+          width:100%;
+          height:100%;
+        }
+    .sensor-container{
+      height: auto;
+      width: auto;
+    }
+}
+
+.sensor-container.sensor-container-mobile{
+    bottom: 105px;
+}

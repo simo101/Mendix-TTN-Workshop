@@ -1,0 +1,102 @@
+.page-watson-text {
+	background: url(../../../images/bg2.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	.region-content > .mx-scrollcontainer-wrapper > .mx-placeholder {
+		height: 100%;
+		
+		> .container {
+			top: 50%;
+			transform: translateY(-50%);
+			position: relative;
+		}
+	}
+	.logo {
+		position: fixed;
+		bottom: 40px;
+		left: 0;
+		right: 0;
+		display: block;
+		margin: auto;
+	}
+	.btn {
+		width: 100%;
+		.icon {
+			top: 3px;
+		}
+	}
+}
+.page-watson-speak {
+	width: 100% !important;
+    height: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    top: 0 !important;
+	.mx-window-body {
+		top: 50%;
+		transform: translateY(-50%);
+		max-width: 700px;
+		width: 100%;
+		margin: auto;
+		height: auto !important;		
+	}
+	
+	.mx-window-content {
+		background: transparent;
+		border: 0;
+		box-shadow: none;
+		.mx-window-header {
+			display: none;
+		}
+	}
+	.btn {
+		width: 100%;
+		margin-top: 30px;
+	}
+	$bars-width: 350px;
+	$bars-height: 150px;
+	$bar-width: $bars-width / 10;
+	$bar-offset: 2px;	
+	.bars {
+		height: $bars-height;
+		width: $bars-width;
+		margin: auto auto;
+		position: relative;
+		display: block;
+	}
+	.bar {
+	background: #FFF;
+		bottom: 1px;
+		height: $bar-width;
+		position: absolute;
+		width: $bar-width;      
+		animation: sound 0ms -800ms linear infinite alternate;
+	}
+
+	@keyframes sound {
+		0% {
+		opacity: .35;
+			height: 3px; 
+		}
+		100% {
+			opacity: 1;       
+			height: 100%;        
+		}
+	}
+
+	.bar:nth-child(1)  { left: 0; animation-duration: 474ms; }
+	.bar:nth-child(2)  { left: ($bar-width) + $bar-offset; animation-duration: 433ms; }
+	.bar:nth-child(3)  { left: ($bar-width * 2) + $bar-offset; animation-duration: 407ms; }
+	.bar:nth-child(4)  { left: ($bar-width * 3) + ($bar-offset * 2); animation-duration: 458ms; }
+	.bar:nth-child(5)  { left: ($bar-width * 4) + ($bar-offset * 3); animation-duration: 400ms; }
+	.bar:nth-child(6)  { left: ($bar-width * 5) + ($bar-offset * 4); animation-duration: 427ms; }
+	.bar:nth-child(7)  { left: ($bar-width * 6) + ($bar-offset * 5); animation-duration: 441ms; }
+	.bar:nth-child(8)  { left: ($bar-width * 7) + ($bar-offset * 6); animation-duration: 419ms; }
+	.bar:nth-child(9)  { left: ($bar-width * 8) + ($bar-offset * 7); animation-duration: 487ms; }
+	.bar:nth-child(10) { left: ($bar-width * 9) + ($bar-offset * 8); animation-duration: 442ms; }
+}
+
+.mx-underlay {
+	opacity: 0.9 !important;
+}

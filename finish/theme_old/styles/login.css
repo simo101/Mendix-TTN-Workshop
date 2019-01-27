@@ -1,0 +1,114 @@
+html, body {
+    height: 100%;
+    background:#146080;
+}
+.login-container {
+    display: table;
+    width: 90%;
+    max-width: 350px;
+    min-width: 180px;
+    height: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.login-form-inputs{
+    overflow: hidden;
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    padding: 45px 25px 0 25px;
+    text-align: center;
+    min-height: 250px;
+    position: relative;
+    background: #fff;
+    border: 1px solid #fff;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-transition: all 0.15s ease-in-out 0s;
+    -moz-transition: all 0.15s ease-in-out 0s;
+    -o-transition: all 0.15s ease-in-out 0s;
+    transition: all 0.15s ease-in-out 0s;
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.login-form {
+    display: table-cell;
+    padding: 30px 10px 10px;
+    vertical-align: middle;
+    text-align: center;
+}
+.logo{
+    margin: 30px auto;
+    max-width: 280px;
+}
+.login-logo {
+    height: 40px;
+    margin-bottom: 50px;
+    /*background: url(./css/img/logo-mendix-white.png) no-repeat center;*/
+}
+.login-message {
+    display: none;
+}
+label {
+    font-weight: bold;
+    display:none;
+}
+.login-form input {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    border-radius: 0px;
+    -webkit-border-radius:0px;
+    -moz-border-radius:0px;
+}
+.login-sso-button {
+    display: block;
+    margin: auto;
+}
+.login-or-label {
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    font-weight: normal;
+    display:none;
+}
+.login-form-inputs .login-local-label {
+    font-weight: bold;
+}
+.login-form-inputs label {
+    font-weight: normal;
+}
+.btn.btn-primary{
+    width:100%;
+    height: 40px;
+    border-radius:0px;
+    -webkit-border-radius:0px;
+    -moz-border-radius:0px;
+    text-transform: uppercase;
+}
+
+.message{
+    margin-top: 15px;
+    color: #b3b3b3;
+    font-size: 12px;
+ }
+
+ .component{
+     background: #fff;
+     padding: 25px;
+     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+ }
+.poweredby{
+    color:#fff;
+    font-size: 16px;
+    font-weight: bold;
+
+}
+.poweredby a{
+        color: #0595db;
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="javasource"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Program Files/Mendix/7.22.2.44474/runtime/bundles/biz.aQute.bnd.bndlib.jar"/><classpathentry kind="lib" path="C:/Program Files/Mendix/7.22.2.44474/runtime/bundles/com.mendix.json.jar"/><classpathentry kind="lib" path="C:/Program Files/Mendix/7.22.2.44474/runtime/bundles/com.mendix.logging-api.jar"/><classpathentry kind="lib" path="C:/Program Files/Mendix/7.22.2.44474/runtime/bundles/com.mendix.m2ee-api.jar"/><classpathentry kind="lib" path="C:/Program Files/Mendix/7.22.2.44474/runtime/bundles/com.mendix.public-api.jar"/><classpathentry kind="lib" path="C:/Program Files/Mendix/7.22.2.44474/runtime/bundles/javax.servlet-api.servlet.jar"/>
+	<classpathentry kind="lib" path="userlib/bcpkix-jdk15on-1.54.jar"/><classpathentry kind="lib" path="userlib/bcprov-jdk16-1.46.jar"/><classpathentry kind="lib" path="userlib/guava-14.0.1.jar"/><classpathentry kind="lib" path="userlib/org.eclipse.paho.client.mqttv3-1.1.1.jar"/><classpathentry kind="lib" path="userlib/slf4j-simple-1.7.5.jar"/>
+	<classpathentry kind="output" path="deployment/run/bin"/>
+</classpath>

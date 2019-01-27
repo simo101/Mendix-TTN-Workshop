@@ -1,0 +1,73 @@
+.t-main{
+    .help-message{
+        position: relative;
+        margin-top: 30px;
+    }
+    .message{
+        animation: none;
+    }
+}
+
+.help-message{
+    position: fixed;
+    bottom: 8px;
+    right: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end; 
+}
+
+.chat-head{
+    position: relative;
+}
+
+.help-message.inactive{
+        .message{
+            opacity: 0;
+            transform: scale(0);
+            width: 0;
+        }
+    }
+
+.img-chat-head{
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    object-position: center center;
+    margin: 0;
+    -webkit-box-shadow: 0 4px 15px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.1);
+    box-shadow: 0 4px 15px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.1);
+    transition: transform .5s linear;
+}
+
+.message{
+    max-width: 280px;
+    color: $font-alt-color;
+    padding: 12px;
+    border-radius: 4px;
+    margin-right: 5px;
+    margin-bottom: 30px;
+    -webkit-box-shadow: 0 4px 15px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.1);
+    box-shadow: 0 4px 15px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.1);
+    font-size: $font-size-h6;
+    transform-origin: 100% 100% 0;
+    animation: fadeIn .5s linear;
+    position: relative;
+    transition: opacity, transform .5s linear;
+    p{
+        margin: 0;
+    }
+    
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        oapcity: 1;
+    }
+}

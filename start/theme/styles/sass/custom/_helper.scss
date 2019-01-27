@@ -1,0 +1,69 @@
+.row-center-start {
+    display: flex !important;
+    align-items: flex-start!important;
+    flex-flow: row !important;
+    justify-content: center !important;
+}
+
+.row-center-end {
+    display: flex !important;
+    align-items: flex-end !important;
+    flex-flow: row !important;
+    justify-content: center !important;
+}
+
+.flex-wrap{
+    flex-wrap: wrap !important;
+    @media (max-width: $screen-xs){
+        .flexitem{
+            margin-right: 0;
+            flex-grow: 1;
+        }
+    }
+}
+
+.filter-darken{
+    filter: brightness(75%);
+}
+
+.filter-blur{
+    filter: blur(3px);
+}
+
+
+.h-100{
+    height: 100% !important;
+}
+
+.w-100{
+    width: 100% !important;
+}
+
+.border-right{
+    border-right: 1px solid $border-color-default;
+}
+
+.border-left{
+    border-left: 1px solid $border-color-default;
+}
+
+.border-top{
+    border-top: 1px solid $border-color-default;
+}
+
+.border-bottom{
+    border-bottom: 1px solid $border-color-default;
+}
+
+.appearance-none{
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+}
+
+
+.t-main{
+    .WM-hide{
+        display: none !important;
+    }
+}

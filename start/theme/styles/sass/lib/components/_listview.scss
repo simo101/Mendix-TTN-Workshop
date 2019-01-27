@@ -1,0 +1,288 @@
+/* ==========================================================================
+   Listview
+
+   Default Mendix Listview Widget. The list view shows a list of objects arranged vertically. Each object is shown using a template
+========================================================================== */
+.mx-listview {
+	/* Remove widget padding */
+	padding: 0;
+
+	/* Clear search button (overrides load more button stying) */
+	.mx-button.mx-listview-clear-button {
+		width: auto;
+	}
+
+	/* Load more button */
+	> .mx-button {
+		width: 100%;
+		margin: 10px auto
+	}
+	.mx-listview-list {
+		margin: 0;
+	}
+	.mx-listview-item {
+		background-color: #fff;
+		padding: 10px 0;
+		color: #333;
+		&:hover {
+			background-color: $brand-info;
+		}
+		&.selected {
+			background-color: $brand-info-dark !important;
+
+			&:hover {
+				background-color: $brand-info-dark !important;
+			}
+		}
+		&:nth-child(2n+1) {
+			background-color: #fff;
+		}
+	}
+
+	.mx-layoutgrid {
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
+	}
+
+	.mx-listview-empty{
+            background:none !important;
+            border:none !important;
+
+            label{
+                margin-top: 250px;
+            }
+    }
+}
+
+
+/* ==========================================================================
+   Listview Hover
+
+   Default Mendix Listview Widget with hover
+========================================================================== */
+.listview-hover.mx-listview {
+	.mx-listview-item {
+		&:hover,
+		&:active {
+			background-color: $brand-info-light !important;
+		}
+	}
+}
+
+
+/* ==========================================================================
+   Listview Lined
+
+   Default Mendix Listview Widget with only border bottom in listview item
+========================================================================== */
+.listview-lined.mx-listview {
+	.mx-listview-item {
+		border-top: 1px solid $gray-primary;
+		border-right: none;
+		border-left: none;
+
+		&:first-child {
+			border-radius: 0;
+			border:none;
+		}
+		&:last-child {
+			border-radius: 0;
+			border-bottom: 1px solid $gray-primary;
+		}
+	}
+}
+
+
+/* ==========================================================================
+   Listview Striped
+
+   Default Mendix Listview Widget with striped listview items
+========================================================================== */
+.listview-striped.mx-listview {
+	.mx-listview-item:nth-child(2n+1) {
+		background-color: $brand-default-light;
+	}
+}
+
+
+/* ==========================================================================
+   Listview Seperated
+
+   Default Mendix Listview Widget with listview items seperated
+========================================================================== */
+.listview-seperated.mx-listview {
+	.mx-listview-item {
+		border-radius: 4px;
+		margin-bottom: 10px;
+		border-style: solid;
+	}
+}
+
+
+/* ==========================================================================
+   Listview Stylingless
+
+   Default Mendix Listview Widget with listview items seperated
+========================================================================== */
+.listview-stylingless.mx-listview {
+	.mx-listview-item {
+		background-color: transparent;
+		border: 0;
+		padding: 0;
+		cursor: default;
+		
+		&:hover {
+			background-color: transparent;
+		}
+		&.selected {
+			background-color: transparent !important;
+
+			&:hover {
+				background-color: transparent !important;
+			}
+		}
+	}
+}	
+	
+.sensordata{
+	li{
+		border-right:0px;
+		border-left:0px;
+	}
+}
+.asset-selector{
+	.form-control{
+		background:#fff;
+		padding-left:5px;
+	}
+	.form-control{
+		position: absolute;
+		top: 0px;
+		width:100%;
+		left: 0px;
+	}
+}
+
+.mx-listview.listview-topictile{
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    vertical-align: top;
+    position: absolute;
+    left: 15px;
+    @media only screen and (max-width: 767px){
+        display: inline-block;
+        position: relative;
+        left: 0;
+    }
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    &:before, &:after{
+        display: table;
+        content: " ";
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    &:after{
+        clear: both;
+    }
+    .mx-list{ 
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        &:before, &:after{
+            display: table;
+            content: " ";
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        &:after{
+            clear: both;
+        }
+        .mx-listview-item{
+            width: 184px;
+            height: 200px;
+            margin: 0 0.5rem 0.5rem 0;
+            display: inline-block;
+            vertical-align: top;
+            -moz-box-shadow: 0 0 0.25rem rgba(0,0,0,0.1);
+            -webkit-box-shadow: 0 0 0.25rem rgba(0,0,0,0.1);
+            box-shadow: 0 0 0.25rem rgba(0,0,0,0.1);
+            @media only screen and (max-width: 767px){
+                width: 175px;
+                .icon{
+                    font-size: 40px;
+                }
+                .metric{
+                    margin-left: 40px;
+                    .metric-text{
+                        font-size: 22px;
+                    }
+                }
+            }
+            &:first-child{
+                margin-left: calc(300px + 0.5rem);
+                @media only screen and (max-width: 767px){
+                    margin-left: 0;
+                }
+            }
+            &:hover, &:focus{
+                box-shadow: 0 0 0 2px #ffffff;
+                border-radius: 4px;
+                z-index: 1;
+            }
+        }
+    }
+}
+
+.mx-listview.listview-notifications{
+    position: absolute;
+    right: 0;
+    top: 0.5rem;
+    width: 25%;
+    height: calc(100vh - 315px);
+    overflow: hidden;
+    @media only screen and (max-width: 991px){
+        width: 33.333%;
+    }
+    
+    .mx-list{
+        .mx-listview-item{
+            margin: 0 0.5rem 0.5rem 0;
+        }
+    }
+    
+    .mx-listview-empty{
+        display: none;
+    }
+    
+    .mx-listview-loadMore{
+        display: none;
+    }
+}
+
+.mx-listview.listview-lined{
+    .mx-listview-item{
+        border-bottom: 1px solid #333 !important;
+        padding: 5px 0;
+    }
+}
+
+.listview-hover.inspections{
+    background: #fff;
+    padding: 5px;
+    .mx-listview-item{
+        border: 0;
+        padding: 0;
+        margin-bottom: 3px !important;
+        .notification{
+                background-color: #333;
+        }
+        &:hover{
+            .notification{
+                background: #000;
+            }
+        }
+    }
+}

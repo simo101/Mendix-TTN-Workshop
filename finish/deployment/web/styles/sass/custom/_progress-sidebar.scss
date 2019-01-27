@@ -1,0 +1,155 @@
+.sidebar-progress{
+    width: 160px;
+    margin: 30px auto 60px;
+    overflow: visible;
+    .widget-progress-circle{
+        position: relative;
+        svg{
+            overflow: visible;
+        }
+        .widget-progress-circle-trail-path {
+            stroke: $sidebar-secondary;
+        }
+        .widget-progress-circle-path{
+            stroke-width: 8px;
+        }
+        .progressbar-text{
+            font-size: $landing-size-large;
+            left: 50% !important;
+            top: 50% !important;
+            padding: 0px;
+            margin: 0px;
+            transform: translate(-50%, -50%) !important;
+            color: $font-alt-color !important;
+            font-weight: 400;
+            &:after{
+                content: "%";
+                font-size: $font-size-h4;
+                position: relative;
+                top: -18px;
+            }
+        }
+    }
+}
+
+.progress-sections{
+    flex: 1;
+    padding: 0 !important;
+    margin: 0;
+    margin-bottom: 30px;
+    &:before, &:after{
+            display: none;
+        }
+    .row{
+        margin: 0;
+        &:before, &:after{
+            display: none;
+        }
+        div[class*="col-"]{
+            padding: 0;
+            &:before, &:after{
+                display: none;
+            }
+        }
+    }
+    li.mx-navigationlist-item{
+        padding: 0;
+        background: transparent;
+        border: 0;
+        &:hover, &:focus{
+            background: transparent;
+            color: $font-alt-color;
+            outline: 0;
+        }
+        &.active{
+            background: transparent;
+            color: $font-alt-color;
+            outline: 0;
+        }
+    }
+}
+
+.progress-section{
+    background: $sidebar-bg;
+    color: $font-alt-color;
+    border: 0;
+    font-weight: $font-weight-normal;
+    padding: 15px;
+    padding-right: 20px;
+    color: $font-alt-color;
+    border-left: 3px solid $sidebar-bg;
+    opacity: 0.5;
+    .badge{
+        background-color: transparent;
+        border: 1px solid $bg-color-secondary;
+    }
+}
+
+.progress-section.current{
+    background: $sidebar-secondary;
+    color: $font-alt-color;
+    border-left-color: $brand-primary;
+    opacity: 1;
+    .badge{
+        background: $brand-primary;
+        border-color: $brand-primary;
+    }
+}
+.progress-section.complete{
+    opacity: 1;
+    color: $font-alt-color;
+   .badge{
+       background: $brand-success;
+       border-color: $brand-success;
+       color: rgba(255, 255, 255, 0);
+       position: relative;
+       &:after{
+            position: absolute;
+            content: '';
+            display: block;
+            top: 3px;
+            left: 16px;
+            width: 6px;
+            height: 12px;
+            border: solid #fff;
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg);
+       }
+    } 
+}
+
+.quote{
+    margin-bottom: 15px;
+    margin-left: 15px;
+    font-style: italic;
+    position: relative;
+    opacity: 1;
+    &:before{
+        font-weight: $font-weight-normal;
+        transform: scale(3);
+        position: absolute;
+        top: 0px;
+        left: -25px;
+        content: '"';
+        opacity: 0.8;
+    }
+    &:after{
+        content: '"';
+    }
+}
+
+.quote-speaker{
+    margin-bottom:0;
+    h5{
+        margin-bottom: 0;
+        color: rgba(255,255,255,0.8);
+    }
+}
+
+.sidebar-profile{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background: $sidebar-secondary;
+    padding: 30px;
+}

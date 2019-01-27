@@ -1,0 +1,340 @@
+.dash-stat-details{
+    background: #222;
+    padding: 20px 0;
+    //margin-bottom:5px;
+    color:#fff;
+    h3{
+        margin-top:5px;
+        margin-bottom:5px;
+    }
+    h4{
+        margin-top:10px;
+        margin-bottom:10px;
+    }
+    .mx-layoutgrid{
+            padding: 10px 15px !important;
+    }
+    .description{
+        @include font-generator($xxxsmall, $normal);
+
+    }
+}
+.dash-stat-time{
+  box-shadow: 0 -1px 6px 0 rgba(0,0,0,.65);
+  background: #043846;
+  height:32px;
+  position: relative;
+    padding:5px;
+    .lastdate{
+        color: #82A7B0;
+        letter-spacing: .5px;
+        font-size: 14px;
+        text-transform: uppercase;
+        line-height: 30px;
+    }
+    .center{
+      margin: -5px;
+    }
+    .left{
+      margin: -5px 5px;
+      position: absolute;
+      left: 0;
+      .user-item{
+        color: #82A7B0;
+        text-decoration: none;
+        font-size:13px;
+        margin-right: 5px;
+        line-height: 30px;
+        margin: 0 20px 0 32px;
+        color: #82A7B0;
+        font-weight: 700;
+        float:left;
+        &.user{
+          position:relative;
+          position: relative;
+          font-weight: 700;
+          color: #4FC9E8;
+          &:before{
+            content: "\e30a";
+            font-family: $font-icons;
+            left:-25px;
+            position: absolute;
+            font-size:20px;
+          }
+        }
+        &.mendix-logo{
+          position: relative;
+          &:before{
+            content: "\e158";
+            font-family: $font-icons;
+            left:-25px;
+            position: absolute;
+            font-size:20px;
+          }
+        }
+      }
+    }
+}
+.shadow{
+  top: 0;
+  height: 1px;
+  background-color: rgba(0,0,0,.1);
+  position: relative;
+  box-shadow: 0 -1px 6px 0 rgba(0,0,0,.65);
+  z-index: 2;
+}
+.dash-stat{
+    background:darken($dark-blue,15%);
+    padding:10px;
+    h2{
+        color:#fff;
+        margin:0px;
+    }
+    h6{
+        margin:0px;
+    }
+    .mx-layoutgrid.mx-layoutgrid-fluid{
+        padding:0px !important;
+    }
+
+}
+
+.dash-stat-header{
+  display: block;
+  position: relative;
+  margin-bottom: 10px;
+  &.temp{
+    &:before{
+      content: "\e560";
+      color: $purple;
+      font-family: $font-icons;
+      position: absolute;
+      left:0;
+      font-size: 24px;
+    }
+  }
+  &.movement{
+    &:before{
+      content:'\e03c';
+      color: $red;
+      font-family: $font-icons;
+      position: absolute;
+      left:0;
+      font-size: 24px;
+    }
+  }
+  &.light{
+    &:before{
+      content: "\e4ab";
+      color: $yellow;
+      font-family: $font-icons;
+      position: absolute;
+      left:0;
+      font-size: 24px;
+    }
+  }
+  &.humidity{
+    &:before{
+      content: "\e596";
+      color:$blue;
+      font-family: $font-icons;
+      position: absolute;
+      left:0;
+      font-size: 24px;
+    }
+  }
+}
+
+.sensor-dropdown{
+  display: inline-block;
+  position: relative;
+  .form-control{
+    display: inline-block;
+    @include appearance(none);
+    @include border-radius(0);
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: $white;
+    padding-right: 20px;
+    background: url("../img/arrow_down_icon.svg") no-repeat right center transparent;
+    background-size: 15px auto;
+    option{
+      color: $dark-blue;
+    }
+  }
+}
+
+.live-metric{
+    position: relative;
+    margin-top: 40px;
+    display: block;
+    
+}
+
+.movement-progress{
+    .progress{
+        height: 50px;
+        .progress-bar{
+            background-color: #9dc62d;
+            box-shadow: none;
+            color:transparent;
+            .progress-text{
+                display: none;
+            }
+        }
+    }
+}
+
+.temp-progress{
+    .progress{
+        height: 50px;
+        display: block;
+        position: relative;
+        top: 20px;
+        box-shadow: none;
+        .progress-bar{
+            background-color: #b90c0d;
+            text-align: right;
+            box-shadow: none;
+            color:transparent;
+            .progress-text{
+                display: none;
+            }
+        }
+    }
+}
+
+.light-progress{
+    .progress{
+        height: 50px;
+        display: block;
+        position: relative;
+        top: 20px;
+        box-shadow: none;
+        .progress-bar{
+            background-color: #f2d249;
+            text-align: right;
+            box-shadow: none;
+            color:transparent;
+            .progress-text{
+                display: none;
+            }
+        }
+    }
+}
+
+.humidity-progress{
+    .progress{
+        height: 50px;
+        display: block;
+        position: relative;
+        top: 20px;
+        box-shadow: none;
+        .progress-bar{
+            background-color: #1b7eac;
+            text-align: right;
+            box-shadow: none;
+            color:transparent;
+            .progress-text{
+                display: none;
+            }
+    }
+    }
+}
+
+.default-progress{
+    .progress{
+        height: 90px;
+        background-color: transparent;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 1;
+        box-shadow: none;
+        .progress-bar{
+            height: 90px; 
+            background-color: transparent;
+            border-right: 3px solid #fff;
+            transition: none;
+            box-shadow: none;
+            color:transparent;
+            .progress-text{
+                display: none;
+            }
+        }
+    }
+}
+
+.threshold{
+    position: absolute;
+    left: 50%;
+    top: -30px;
+    color: #fff;
+    &.light{
+        margin-left: -30px;
+    }
+    &.temp{
+        margin-left: -20px;
+    }
+    &.humidity{
+        margin-left: -20px;
+    }
+}
+
+.current{
+    &.light{
+        color: #f2d249;
+        &:before{
+            background-color: #f2d249;
+        }
+    }
+    &.temp{
+        color: #b90c0d;
+        &:before{
+            background-color: #b90c0d;
+        }
+    }
+    &.humidity{
+        color: #1b7eac;
+        &:before{
+            background-color: #1b7eac;
+        }
+    }
+    padding-top: 30px;
+    display: block;
+    position: relative;
+    &:before{
+        height: 90px;
+        width: 3px;
+        content: "";
+        position: absolute;
+        top: -70px;
+    }
+    
+    span{
+        left: -20px;
+        position: relative;
+    }
+}
+
+.threshold-text{
+    display: block;
+}
+
+.metric-box{
+    margin-top: 30px;
+}
+
+.text-light{
+   color: #f2d249; 
+}
+
+.text-temp{
+    color: #b90c0d;
+}
+
+.text-humidity{
+    color: #1b7eac;
+}
