@@ -67,10 +67,25 @@ The modeler will then ask you to name your app and choose a location on your fil
 
 Once complete you'll be ready to begin the build of your smart app.
 
-## Building the App
+### Creating the Access Keys
+Before we can connect to our devices data we need to ensure that we have created an application and device in the Things Network console.
 
-### Connecting to the MQTT Broker
+Follow these guides to get your first device setup:
+[https://www.thethingsnetwork.org/docs/applications/add.html](https://www.thethingsnetwork.org/docs/applications/add.html)
 
+Once setup you need to generate an access key. This can be done in the settings section of the application. 
+
+The key needs to have at least message privledges.
+
+![alt text][accesskey]
+
+The access key value can be found on the overview page of the application. You will need to use the key later in the mqtt setup.
+
+![alt text][keys]
+
+
+## Connecting to the MQTT Broker
+### Downloading the client
 In order to get data from The Things Network (TTN) we need to subscribe to the MQTT Broker. This will allow us to get notified when new data is sent from our device.
 
 The first thing we need to do is download the MQTT Client from the appstore.
@@ -78,6 +93,8 @@ The first thing we need to do is download the MQTT Client from the appstore.
 Inside the modeler click on the shopping icon in the top right hand corner and search for MQTT. Then download the client into the project.
 
 ![alt text][appstore]
+
+### Subscribing to the topic
 
 Next we need to call a microflow to subscribe to the MQTT Topic. Right click on the MyFirstModule in the project explorer and select add microflow.
 
@@ -95,6 +112,55 @@ Double click on the action activity and select mqtt subscribe from the menu.
 
 ![alt text][selectmqttsubscribe]
 
+Double click on the MQTT Subscribe actvity and fill in the following:
+
+|Setting|Value|
+|---|---|
+|Broker Host|eu.thethings.network (if other region replace the eu)|
+|Broker port|1883 (8883 is also supported but requires additional certs)|
+|Broker organisation|empty|
+|Timeout|60|
+|Username|Application ID set in the Things Network|
+|Password|The Access Key setup earlier in this [step](#Creating-the-Access-Keys)|
+|Topic Name|+/devices/+/up|
+|On Message Microflow|[Create a new Microflow](#On-Message-Microflow)|
+|CA|empty|
+|Client certificate|empty|
+|Client key|empty|
+|Client password|empty|
+|QoS|At_Most_Once_0|
+
+### On Message Microflow
+
+On the MQTT Subscribe option click select and then new. Give the microflow a name and click ok. The On Message Microflow will require two string parameters. One for the Payload and one for the Topic. 
+
+![alt text][processmicroflow]
+
+To create the microflow parameter click on the parameter icon on the topbar.
+
+![alt text][parameteroption]
+
+Once we have the parameters added we need to add a log message to the flow to ensure that everything is working correctly.
+
+Add a new activity to the line and select log message. Then configure the log message like so:
+
+![alt text][logmessage]
+
+### Add subscribing microflow to page.
+Open up the home page by double clicking on it in the project explorer.
+
+Click add widget from the menu bar. Using the dialog box search for microflow and select microflow button. Then place the button on the page.
+
+Finally select the microflow that we created earlier to subscribe to the topic.
+
+
+### Running the app
+We've now built the required functionality to subscribe. To run the app and test it click on the run locally button. This will start the app running on http://localhost:8080.
+
+![alt text][runlocally]
+
+Using a browser we can open up our app and press the subscribe button. If successful our app should be now subscribed to the Things Network.
+
 
 
 [signup]: ./img/signuppage.png "Signup image"
@@ -109,3 +175,9 @@ Double click on the action activity and select mqtt subscribe from the menu.
 [namemicroflow]: ./img/namemicroflow.png "Name the microflow"
 [microflowactivity]: ./img/microflowactivity.png "Name the microflow"
 [selectmqttsubscribe]: ./img/selectmqttsubscribe.png "Name the microflow"
+[accesskey]: ./img/accesskey.png "Creating a accesskey"
+[keys]: ./img/keys.png "Viewing keys"
+[processmicroflow]: ./img/processmicroflow.png "Microflow Process"
+[parameteroption]: ./img/parameteroption.png "Parameter options"
+[logmessage]: ./img/logmessage.png "Log Message"
+[runlocally]: ./img/runlocally.png "Run Locally"
