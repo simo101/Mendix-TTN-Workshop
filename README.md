@@ -54,8 +54,46 @@ Install the software on your windows machine or virtual machine. The installer w
 ![alt text][install]
 
 
-## Setting up your first Smart App
+### Creating your project
+To get started with building your first smart application you will need to import up the starter package in the modeler and setup your own project.
 
+To do so go to file -> Import Project Package.
+
+![alt text][importpackage]
+
+The modeler will then ask you to name your app and choose a location on your file system to store it. When you press OK the platform will create you a new Team Server repository, which is the Mendix version control system.
+
+![alt text][nameproject]
+
+Once complete you'll be ready to begin the build of your smart app.
+
+## Building the App
+
+### Connecting to the MQTT Broker
+
+In order to get data from The Things Network (TTN) we need to subscribe to the MQTT Broker. This will allow us to get notified when new data is sent from our device.
+
+The first thing we need to do is download the MQTT Client from the appstore.
+
+Inside the modeler click on the shopping icon in the top right hand corner and search for MQTT. Then download the client into the project.
+
+![alt text][appstore]
+
+Next we need to call a microflow to subscribe to the MQTT Topic. Right click on the MyFirstModule in the project explorer and select add microflow.
+
+![alt text][addmicroflow]
+
+Give the microflow an approriate name.
+
+![alt text][namemicroflow]
+
+Inside the microflow editor select the Action Activity from the menu bar at the top and drag the activity onto the line.
+
+![alt text][microflowactivity]
+
+Double click on the action activity and select mqtt subscribe from the menu.
+
+![alt text][selectmqttsubscribe]
 
 
 
@@ -64,3 +102,10 @@ Install the software on your windows machine or virtual machine. The installer w
 [startjourney]: ./img/wheretostart.png "Start your Journey"
 [download]: ./img/download.png "Download the modeler"
 [install]: ./img/install.png "Install the modeler"
+[importpackage]: ./img/importprojectpackage.png "Import Project Package"
+[nameproject]: ./img/importpackagewithname.png "Naming project"
+[appstore]: ./img/appstore.png "Search MQTT in appstore"
+[addmicroflow]: ./img/addmicroflow.png "Add Microflow"
+[namemicroflow]: ./img/namemicroflow.png "Name the microflow"
+[microflowactivity]: ./img/microflowactivity.png "Name the microflow"
+[selectmqttsubscribe]: ./img/selectmqttsubscribe.png "Name the microflow"
