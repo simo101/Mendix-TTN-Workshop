@@ -259,11 +259,60 @@ Inside the mapping select the payload as the variable, the import mapping as our
 ## Building the dashboard
 Now that we have our data we need a way to visualise it.
 
+Create a new page and select Dashboard TTN.
+
+![alt text][selectdashboardttn]
+
+### Configure the stats
+Double Click on the top level dataview and select the microflow "GET_RefreshObj".
+
+![alt text][topdataview]
+
+Select no when asked if you want to fill the contents.
 
 
+![alt text][selectno]
 
 
+Next we need to get the latest record for our temperature and light data. Double click on the dataview containing the temperature and set the data source as get latest record microflow. Select No when asked to generate.
 
+![alt text][latestrecord]
+
+Configure the temperature, light and battery by double clicking on the missing parameter labels and then click on edit. Under the parameters section click edit. Select the attributes you wish to show.
+
+![alt text][selectattribute]
+
+### Configure the Graphs
+Double click on the area chart and then double click on the series.
+
+Under the data source tab select the DeviceData entity.
+
+![alt text][selectentitychart]
+
+
+Under the data points tab select the x-axis attribute, y-axis attribute and the x-axis sort attribute.
+
+![alt text][editseries]
+
+Do this process for both area charts.
+
+### Connect up the Subscribe button
+Connect up the new subscribe to TTN button to the microflow you created earlier.
+
+### Connect up microflow timer
+Double click on the microflow timer widget and on the microflow option select
+![alt text][microflowtimerselect]
+
+### Configure Homepage
+Next we need to hook up our new page to the navigation. On the default homepage click on select and choose the new page.
+![alt text][navigationprofile]
+
+### Run the app
+Now that we've setup our dashboard we can run it locally and open the app up in our browser.
+
+Click subscribe to TTN and you should see data appear in the dashboard.
+
+Congratulations you've built your first IoT connected app!
 
 
 
@@ -298,4 +347,26 @@ Now that we have our data we need a way to visualise it.
 
 [mapautomatically]: ./img/mapautomatically.png "Map automatically"
 
-[payloadimport]: ./img/payloadimport.png "Payload Mapping"
+[payloadimport]: ./img/payloadimport.png "Payload Import"
+[selectdashboardttn]: ./img/selectdashboardttn.png "Select Dashboard"
+[topdataview]: ./img/topdataview.png "Top Dataview"
+[selectno]: 
+./img/selectno.png "Payload Mapping"
+
+[latestrecord]: 
+./img/latestrecord.png "Latest Record"
+
+[selectattribute]: 
+./img/selectattribute.png "Select Attribute"
+
+[selectentitychart]: 
+./img/selectentitychart.png "Select Entity Chart"
+
+[editseries]: 
+./img/editseries.png "Edit Series"
+
+[microflowtimerselect]: 
+./img/microflowtimerselect.png "Microflow timer"
+
+[navigationprofile]: 
+./img/navigationprofile.png "Navigation Profile"
