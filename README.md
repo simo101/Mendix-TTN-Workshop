@@ -377,45 +377,20 @@ Using the project explorer drag the snippet from the explorer onto the page belo
 [jsonstructure]: ./img/jsonstructure.png "Add JSON"
 [importmapper]: ./img/importmapper.png "Add JSON"
 [dragdataentry]: ./img/dragdataentry.png "Data Entry"
-
 [converttodatetime]: ./img/converttodatetime.png "Convert to Date time"
-
 [converttodatetime]: ./img/converttodatetime.png "Convert to Date time"
-
 [mapautomatically]: ./img/mapautomatically.png "Map automatically"
-
 [payloadimport]: ./img/payloadimport.png "Payload Import"
 [selectdashboardttn]: ./img/selectdashboardttn.png "Select Dashboard"
 [topdataview]: ./img/topdataview.png "Top Dataview"
-[selectno]: 
-./img/selectno.png "Payload Mapping"
-
-[latestrecord]: 
-./img/latestrecord.png "Latest Record"
-
-[selectattribute]: 
-./img/selectattribute.png "Select Attribute"
-
-[selectentitychart]: 
-./img/selectentitychart.png "Select Entity Chart"
-
-[editseries]: 
-./img/editseries.png "Edit Series"
-
-[microflowtimerselect]: 
-./img/microflowtimerselect.png "Microflow timer"
-
-[navigationprofile]: 
-./img/navigationprofile.png "Navigation Profile"
-
-[exclusivesplit]: 
-./img/exclusivesplit.png "Exclusive split"
-
-[exclusivesplitdecision]: 
-./img/exclusivesplitdecision.png "Exclusive split decision"
-
-[createalert]: 
-./img/createalert.png "create alert"
-
-[alertssnippet]: 
-./img/alertssnippet.png "Alerts Snippet"
+[selectno]: ./img/selectno.png "Payload Mapping"
+[latestrecord]: ./img/latestrecord.png "Latest Record"
+[selectattribute]: ./img/selectattribute.png "Select Attribute"
+[selectentitychart]: ./img/selectentitychart.png "Select Entity Chart"
+[editseries]: ./img/editseries.png "Edit Series"
+[microflowtimerselect]: ./img/microflowtimerselect.png "Microflow timer"
+[navigationprofile]: ./img/navigationprofile.png "Navigation Profile"
+[exclusivesplit]: ./img/exclusivesplit.png "Exclusive split"
+[exclusivesplitdecision]: ./img/exclusivesplitdecision.png "Exclusive split decision"
+[createalert]: ./img/createalert.png "create alert"
+[alertssnippet]: ./img/alertssnippet.png "Alerts Snippet"
