@@ -315,6 +315,43 @@ Click subscribe to TTN and you should see data appear in the dashboard.
 Congratulations you've built your first IoT connected app!
 
 
+## Making a change
+
+### Adding a decision
+Now that we are able to visualise our sensor data the next step is to add proactive actional alerts.
+
+We want to trigger an alert if our light levels go below a certain level.
+
+To start with we will edit our processing microflow for processing the data.
+
+Add a exclusive split to the microflow.
+
+![alt text][exclusivesplit]
+
+Inside the exclusive split add the condition, or one that meets your use case:
+
+`$DeviceData/Light < 15 `
+
+![alt text][exclusivesplitdecision]
+
+Create two decision lines one for true and one for false by dragging from the exclusive split.
+
+### Adding an alert
+
+Next we need to create a new object to store our alert in.
+
+Add a new activity to the true line of the microflow and select create object.
+
+![alt text][createalert]
+
+Add two attributes by pressing the new button and fill in title and message.
+
+### Add to dashboard
+Next we need to be able to see the alerts. To help with building this functionality i have included a handy snippet that you can drag and drop onto the page.
+
+Using the project explorer drag the snippet from the explorer onto the page below the subscribe to TTN button. This snippet is in the USEME folder.
+
+![alt text][alertssnippet]
 
 
 
@@ -370,3 +407,15 @@ Congratulations you've built your first IoT connected app!
 
 [navigationprofile]: 
 ./img/navigationprofile.png "Navigation Profile"
+
+[exclusivesplit]: 
+./img/exclusivesplit.png "Exclusive split"
+
+[exclusivesplitdecision]: 
+./img/exclusivesplitdecision.png "Exclusive split decision"
+
+[createalert]: 
+./img/createalert.png "create alert"
+
+[alertssnippet]: 
+./img/alertssnippet.png "Alerts Snippet"
