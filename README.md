@@ -161,6 +161,112 @@ We've now built the required functionality to subscribe. To run the app and test
 
 Using a browser we can open up our app and press the subscribe button. If successful our app should be now subscribed to the Things Network.
 
+## Processing the Payload
+To process the payload we need to utilize the Mendix Import Mapping functionality. This allows developers to import data from XML and JSON into Mendix entities.
+
+### Step 1 
+The first thing we need to do is get the JSON that is returned in the payload of our microflow. This will appear in the Mendix console when data is sent to The Things Network, If you don't see this then check your connection. You will see a log entry with something similar to the following:
+
+`{
+    "app_id": "ttn-node-simon",
+    "dev_id": "ttn-node-1",
+    "hardware_serial": "0004A30B001FEFFE",
+    "port": 3,
+    "counter": 27,
+    "payload_raw": "D1QAEgou",
+    "payload_fields": {
+        "battery": 3924,
+        "event": "motion",
+        "light": 18,
+        "temperature": 26.06
+    },
+    "metadata": {
+        "time": "2019-01-29T17:46:37.512499778Z",
+        "frequency": 868.5,
+        "modulation": "LORA",
+        "data_rate": "SF7BW125",
+        "airtime": 51456000,
+        "coding_rate": "4/5",
+        "gateways": [
+            {
+                "gtw_id": "eui-b827ebfffe49b783",
+                "timestamp": 392151467,
+                "time": "2019-01-29T17:46:37.4621890Z",
+                "channel": 2,
+                "rssi": -17,
+                "snr": 7.2,
+                "rf_chain": 1,
+                "latitude": 52.45549,
+                "longitude": 0.29627,
+                "altitude": 11
+            }
+        ]
+    }
+}`
+
+Copy this to your clipboard.
+
+### Step 2
+Using the copied JSON we need to create a JSON Structure.
+
+Right click on the MyFirstModule in the project explorer, select add other and click on JSON Structure.
+![alt text][addjson]
+
+
+Paste the copied JSON into the dialog box then click on format and Refresh.
+![alt text][jsonstructure]
+
+### Step 3
+Now that we have our data payload represented we need to create an import mapping.
+
+Right click on the MyFirstModule in the project explorer and select import mapping.
+
+Inside the import mapping select the JSON structure and click on Expand All.
+
+![alt text][importmapper]
+
+We only are only interested in some of the data from the response so we have selected only the fields required.
+
+Using the mapping we can map data from the JSON response to our domain model. This can be done automatically for you using the Map automatically button. 
+
+We are going to use an entity we have available in the starter app and get the mapper to generate the new attributes for us. Drag the Device Data entity from the connector into the space provided.
+
+![alt text][dragdataentry]
+
+Click the button Map attributes by name. This will map one attribute the time. 
+
+Then click on select on the time attribute line. We need to convert the date string into a date. Select the microflow "ConvertToDateTime".
+
+![alt text][converttodatetime]
+
+Next we need to generate the attributes for our data mapping.
+
+Click Map Automatically button and click close.
+
+![alt text][mapautomatically]
+
+### Step 4
+Now that our import mapping is complete we can use it in our microflow to import the data.
+
+Open up your process microflow with the payload parameter.
+
+Create a new activity and select import with mapping.
+
+Inside the mapping select the payload as the variable, the import mapping as our new mapping and yes to store in variable.
+
+![alt text][payloadimport]
+
+## Building the dashboard
+Now that we have our data we need a way to visualise it.
+
+
+
+
+
+
+
+
+
 
 
 [signup]: ./img/signuppage.png "Signup image"
@@ -181,3 +287,15 @@ Using a browser we can open up our app and press the subscribe button. If succes
 [parameteroption]: ./img/parameteroption.png "Parameter options"
 [logmessage]: ./img/logmessage.png "Log Message"
 [runlocally]: ./img/runlocally.png "Run Locally"
+[addjson]: ./img/addjson.png "Add JSON"
+[jsonstructure]: ./img/jsonstructure.png "Add JSON"
+[importmapper]: ./img/importmapper.png "Add JSON"
+[dragdataentry]: ./img/dragdataentry.png "Data Entry"
+
+[converttodatetime]: ./img/converttodatetime.png "Convert to Date time"
+
+[converttodatetime]: ./img/converttodatetime.png "Convert to Date time"
+
+[mapautomatically]: ./img/mapautomatically.png "Map automatically"
+
+[payloadimport]: ./img/payloadimport.png "Payload Mapping"
