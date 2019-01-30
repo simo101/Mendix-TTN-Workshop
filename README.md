@@ -336,6 +336,8 @@ Inside the exclusive split add the condition, or one that meets your use case:
 
 Create two decision lines one for true and one for false by dragging from the exclusive split.
 
+![alt text][drawexclusivesplit]
+
 ### Adding an alert
 
 Next we need to create a new object to store our alert in.
@@ -352,8 +354,6 @@ Next we need to be able to see the alerts. To help with building this functional
 Using the project explorer drag the snippet from the explorer onto the page below the subscribe to TTN button. This snippet is in the USEME folder.
 
 ![alt text][alertssnippet]
-
-
 
 [signup]: ./img/signuppage.png "Signup image"
 [confirm]: ./img/confirmaccount.png "Confirm Account"
@@ -394,3 +394,4 @@ Using the project explorer drag the snippet from the explorer onto the page belo
 [exclusivesplitdecision]: ./img/exclusivesplitdecision.png "Exclusive split decision"
 [createalert]: ./img/createalert.png "create alert"
 [alertssnippet]: ./img/alertssnippet.png "Alerts Snippet"
+[drawexclusivesplit]: ./img/drawexclusivesplit.gif "Alerts Snippet"
