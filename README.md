@@ -45,7 +45,7 @@ For this exercise you will need to download and install the Mendix Desktop Model
 
 
 ### Creating your project
-To get started you will need to import the starter package in the Modeler and setup your own project.
+To get started you will need to import the [starter package](./starter%20package/SmartHome.mpk) in the Modeler and setup your own project.
 
 1. Open the **Mendix Desktop Modeler**.
 2. Sign in with your Mendix account details.
