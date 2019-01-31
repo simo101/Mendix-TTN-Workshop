@@ -20,9 +20,9 @@ public class DeviceData
 	 */
 	public enum MemberNames
 	{
+		Time("Time"),
 		App_id("App_id"),
 		Dev_id("Dev_id"),
-		Time("Time"),
 		Battery("Battery"),
 		Event("Event"),
 		Light("Light"),
@@ -122,6 +122,42 @@ public class DeviceData
 		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 	/**
+	 * @return value of Time
+	 */
+	public final java.util.Date getTime()
+	{
+		return getTime(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of Time
+	 */
+	public final java.util.Date getTime(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.util.Date) getMendixObject().getValue(context, MemberNames.Time.toString());
+	}
+
+	/**
+	 * Set value of Time
+	 * @param time
+	 */
+	public final void setTime(java.util.Date time)
+	{
+		setTime(getContext(), time);
+	}
+
+	/**
+	 * Set value of Time
+	 * @param context
+	 * @param time
+	 */
+	public final void setTime(com.mendix.systemwideinterfaces.core.IContext context, java.util.Date time)
+	{
+		getMendixObject().setValue(context, MemberNames.Time.toString(), time);
+	}
+
+	/**
 	 * @return value of App_id
 	 */
 	public final java.lang.String getApp_id()
@@ -191,42 +227,6 @@ public class DeviceData
 	public final void setDev_id(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String dev_id)
 	{
 		getMendixObject().setValue(context, MemberNames.Dev_id.toString(), dev_id);
-	}
-
-	/**
-	 * @return value of Time
-	 */
-	public final java.util.Date getTime()
-	{
-		return getTime(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of Time
-	 */
-	public final java.util.Date getTime(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		return (java.util.Date) getMendixObject().getValue(context, MemberNames.Time.toString());
-	}
-
-	/**
-	 * Set value of Time
-	 * @param time
-	 */
-	public final void setTime(java.util.Date time)
-	{
-		setTime(getContext(), time);
-	}
-
-	/**
-	 * Set value of Time
-	 * @param context
-	 * @param time
-	 */
-	public final void setTime(com.mendix.systemwideinterfaces.core.IContext context, java.util.Date time)
-	{
-		getMendixObject().setValue(context, MemberNames.Time.toString(), time);
 	}
 
 	/**

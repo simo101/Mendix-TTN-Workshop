@@ -4,55 +4,55 @@
 
 package myfirstmodule.proxies;
 
-public class RefreshObj
+public class Refresh
 {
-	private final com.mendix.systemwideinterfaces.core.IMendixObject refreshObjMendixObject;
+	private final com.mendix.systemwideinterfaces.core.IMendixObject refreshMendixObject;
 
 	private final com.mendix.systemwideinterfaces.core.IContext context;
 
 	/**
 	 * Internal name of this entity
 	 */
-	public static final java.lang.String entityName = "MyFirstModule.RefreshObj";
+	public static final java.lang.String entityName = "MyFirstModule.Refresh";
 
-	public RefreshObj(com.mendix.systemwideinterfaces.core.IContext context)
+	public Refresh(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, com.mendix.core.Core.instantiate(context, "MyFirstModule.RefreshObj"));
+		this(context, com.mendix.core.Core.instantiate(context, "MyFirstModule.Refresh"));
 	}
 
-	protected RefreshObj(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject refreshObjMendixObject)
+	protected Refresh(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject refreshMendixObject)
 	{
-		if (refreshObjMendixObject == null)
+		if (refreshMendixObject == null)
 			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
-		if (!com.mendix.core.Core.isSubClassOf("MyFirstModule.RefreshObj", refreshObjMendixObject.getType()))
-			throw new java.lang.IllegalArgumentException("The given object is not a MyFirstModule.RefreshObj");
+		if (!com.mendix.core.Core.isSubClassOf("MyFirstModule.Refresh", refreshMendixObject.getType()))
+			throw new java.lang.IllegalArgumentException("The given object is not a MyFirstModule.Refresh");
 
-		this.refreshObjMendixObject = refreshObjMendixObject;
+		this.refreshMendixObject = refreshMendixObject;
 		this.context = context;
 	}
 
 	/**
-	 * @deprecated Use 'RefreshObj.load(IContext, IMendixIdentifier)' instead.
+	 * @deprecated Use 'Refresh.load(IContext, IMendixIdentifier)' instead.
 	 */
 	@Deprecated
-	public static myfirstmodule.proxies.RefreshObj initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
+	public static myfirstmodule.proxies.Refresh initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
-		return myfirstmodule.proxies.RefreshObj.load(context, mendixIdentifier);
+		return myfirstmodule.proxies.Refresh.load(context, mendixIdentifier);
 	}
 
 	/**
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.createSudoClone() can be used to obtain sudo access).
 	 */
-	public static myfirstmodule.proxies.RefreshObj initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
+	public static myfirstmodule.proxies.Refresh initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
-		return new myfirstmodule.proxies.RefreshObj(context, mendixObject);
+		return new myfirstmodule.proxies.Refresh(context, mendixObject);
 	}
 
-	public static myfirstmodule.proxies.RefreshObj load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
+	public static myfirstmodule.proxies.Refresh load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		com.mendix.systemwideinterfaces.core.IMendixObject mendixObject = com.mendix.core.Core.retrieveId(context, mendixIdentifier);
-		return myfirstmodule.proxies.RefreshObj.initialize(context, mendixObject);
+		return myfirstmodule.proxies.Refresh.initialize(context, mendixObject);
 	}
 
 	/**
@@ -91,7 +91,7 @@ public class RefreshObj
 	 */
 	public final com.mendix.systemwideinterfaces.core.IMendixObject getMendixObject()
 	{
-		return refreshObjMendixObject;
+		return refreshMendixObject;
 	}
 
 	/**
@@ -110,7 +110,7 @@ public class RefreshObj
 
 		if (obj != null && getClass().equals(obj.getClass()))
 		{
-			final myfirstmodule.proxies.RefreshObj that = (myfirstmodule.proxies.RefreshObj) obj;
+			final myfirstmodule.proxies.Refresh that = (myfirstmodule.proxies.Refresh) obj;
 			return getMendixObject().equals(that.getMendixObject());
 		}
 		return false;
@@ -127,7 +127,7 @@ public class RefreshObj
 	 */
 	public static java.lang.String getType()
 	{
-		return "MyFirstModule.RefreshObj";
+		return "MyFirstModule.Refresh";
 	}
 
 	/**

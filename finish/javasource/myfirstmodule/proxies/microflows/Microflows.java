@@ -53,7 +53,7 @@ public class Microflows
 			throw new MendixRuntimeException(e);
 		}
 	}
-	public static myfirstmodule.proxies.DeviceData gET_LatestRecord(IContext context, myfirstmodule.proxies.RefreshObj _refreshObj)
+	public static myfirstmodule.proxies.DeviceData gET_LatestRecord(IContext context, myfirstmodule.proxies.Refresh _refreshObj)
 	{
 		try
 		{
@@ -67,13 +67,13 @@ public class Microflows
 			throw new MendixRuntimeException(e);
 		}
 	}
-	public static myfirstmodule.proxies.RefreshObj gET_RefreshObj(IContext context)
+	public static myfirstmodule.proxies.Refresh gET_RefreshObj(IContext context)
 	{
 		try
 		{
 			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
 			IMendixObject result = (IMendixObject)Core.execute(context, "MyFirstModule.GET_RefreshObj", params);
-			return result == null ? null : myfirstmodule.proxies.RefreshObj.initialize(context, result);
+			return result == null ? null : myfirstmodule.proxies.Refresh.initialize(context, result);
 		}
 		catch (CoreException e)
 		{
@@ -94,12 +94,12 @@ public class Microflows
 			throw new MendixRuntimeException(e);
 		}
 	}
-	public static boolean updateData(IContext context, myfirstmodule.proxies.RefreshObj _deviceData)
+	public static boolean updateData(IContext context, myfirstmodule.proxies.Refresh _refresh)
 	{
 		try
 		{
 			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
-			params.put("DeviceData", _deviceData == null ? null : _deviceData.getMendixObject());
+			params.put("Refresh", _refresh == null ? null : _refresh.getMendixObject());
 			return (java.lang.Boolean)Core.execute(context, "MyFirstModule.UpdateData", params);
 		}
 		catch (CoreException e)
