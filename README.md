@@ -1,90 +1,82 @@
 # Building Smart Apps using Mendix and The Things Network
-In this workshop you will learn about the Mendix platform and get hands on experience building your first IoT enabled smart app.
+In this workshop you will learn about the Mendix Platform and get hands on experience building your first IoT-enabled smart app.
 
 We will cover:
 
-- Introduction to Mendix Platform.
+- Introduction to the Mendix Platform.
 
 - What is a Smart App?
 
-- Understanding of use cases for Mendix and Things Network.
+- Understanding of use cases for Mendix and The Things Network.
 
-- Hands-On session using the Mendix Modeler to build out your first app without writing code.
+- Hands-on session using the Mendix Modeler to build out your first app without writing code.
 
-- Deploying your app to the cloud.
+- Deploying your app to the cloud with a single click.
 
 ## Installation
 ### Sign up for Mendix
-To get started with developing your first Mendix Smart App you will need to sign up for the Mendix Platform. 
+To get started with your first Mendix Smart App you will need to sign up for the Mendix Platform. 
 
-To get started use this link to sign up:
-[https://signup.mendix.com/link/signup/](https://signup.mendix.com/link/signup/)
+1. Sign up for the Mendix Platform using this link: [https://signup.mendix.com/link/signup/](https://signup.mendix.com/link/signup/)
+2. Use your business email address (Gmail, Hotmail, or Yahoo are not accepted).
 
-Enter in your details and click get started for free. Your email address must be a non gmail or hotmail domain.
+    ![alt text][signup]
 
-![alt text][signup]
+3. Click the confirmation link in the confirmation email to finalize your account setup.
+4. You will be presented with three options to start your Mendix journey. Select the Desktop Modeler option and click Get Started.
 
-Once you have signed up you will need to confirm your account. You should receive an email with a link, which once clicked will provision your new account.
-
-![alt text][confirm]
-
-When you confirm your account you will be presented with 3 options to start your Mendix journey. For this exercise we are going to focus on the desktop modeler. 
-
-![alt text][startjourney]
-
-The platform will then provision your account and give you a tour of the platform.
+    ![alt text][startjourney]
 
 ### Installing the Modeler
-For this exercise we will need to download and install the Mendix Desktop modeler. The latest modeler downloads can be found here:
+For this exercise you will need to download and install the Mendix Desktop Modeler.
 
-[https://appstore.home.mendix.com/link/modelers/](https://appstore.home.mendix.com/link/modelers/)
+1. Go to [https://appstore.home.mendix.com/link/modelers/](https://appstore.home.mendix.com/link/modelers/) and download Mendix Desktop Modeler 7.22.2 release or higher.
 
-Download the 7.22.2 release or higher.
+    ![alt text][download]
 
-![alt text][download]
-
-
-
-Install the software on your windows machine or virtual machine. The installer will install all the necessary frameworks for the modeler to run. These include:
-- Microsoft .NET Framework 4.6.2
-- Microsoft Visual C++ 2010 SP1 Redistributable Package
-- Microsoft Visual C++ 2013 Redistributable Package
-- Java Development Kit 1.8
+2. When the download is complete, install the Desktop Modeler on your Windows machine or a virtual machine if you're using a Mac. The installer will install all the necessary frameworks for the Modeler to run. These include:
+    - Microsoft .NET Framework 4.6.2
+    - Microsoft Visual C++ 2010 SP1 Redistributable Package
+    - Microsoft Visual C++ 2013 Redistributable Package
+    - Java Development Kit 1.8
 
 
-![alt text][install]
+    ![alt text][install]
 
 
 ### Creating your project
-To get started with building your first smart application you will need to import the starter package in the modeler and setup your own project.
+To get started you will need to import the starter package in the Modeler and setup your own project.
 
-To do so go to File -> Import Project Package.
+1. Open the **Mendix Desktop Modeler**.
+2. Sign in with your Mendix account details.
+3. Go to **File -> Import Project Package**.
 
-![alt text][importpackage]
+    ![alt text][importpackage]
 
-The modeler will then ask you to name your app and choose a location on your file system to store it. When you press OK the platform will create you a new Team Server repository. Team Server is the Mendix hosted version control system.
+4. Enter a name for the app and choose a location on your computer to store it.
+5. Click OK. The platform will create you a new Team Server repository. Team Server is a version control system that stores your Mendix projects.
 
-![alt text][nameproject]
+    ![alt text][nameproject]
 
-Once complete you'll be ready to begin the build of your smart app.
+Once complete, you'll be ready to begin the build of your smart app.
 
 ### Creating the Access Keys
-If you want to connect your Mendix app up to your own data you will need to add a device and generate an application key in the Things Network console. 
+If you want to connect your Mendix app up to your own data you will need to add a device and generate an application key in The Things Network console. 
 
-If you don't have a device feel free skip this step and use the example keys provided here: [Credential Details](./credentials/example.md)
+NOTE: If you don't have a device, feel free skip this step and use the example keys provided here: [Credential Details](./credentials/example.md)
 
-Follow these guides to get your first device setup:
+Follow these guides to get your first device set up:
 [https://www.thethingsnetwork.org/docs/applications/add.html](https://www.thethingsnetwork.org/docs/applications/add.html)
 
-Once setup you need to generate an access key. This can be done in the settings section of the application. 
+Once set up you need to generate an access key. This can be done in the settings section of the application. 
 
 The key needs to have at least message privledges.
 
-![alt text][accesskey]
+    ![alt text][accesskey]
 
 The access key value can be found on the overview page of the application. You will need to use the key later in the mqtt setup.
 
-![alt text][keys]
+    ![alt text][keys]
 
 
 ## Connecting to the MQTT Broker
