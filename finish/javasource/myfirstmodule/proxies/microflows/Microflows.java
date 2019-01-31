@@ -40,6 +40,18 @@ public class Microflows
 			throw new MendixRuntimeException(e);
 		}
 	}
+	public static void clearAllData(IContext context)
+	{
+		try
+		{
+			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
+			Core.execute(context, "MyFirstModule.ClearAllData", params);
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
 	public static java.util.Date convertToDateTime(IContext context, java.lang.String _time)
 	{
 		try

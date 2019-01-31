@@ -1,7 +1,7 @@
 # Building Smart Apps using Mendix and The Things Network
-Participants will learn about what the Mendix platform is and get hands on experience building their first IoT enabled smart app.
+In this workshop you will learn about the Mendix platform and get hands on experience building your first IoT enabled smart app.
 
-Within this workshop we will cover:
+We will cover:
 
 - Introduction to Mendix Platform.
 
@@ -24,7 +24,7 @@ Enter in your details and click get started for free. Your email address must be
 
 ![alt text][signup]
 
-Once you have signed up you will need to confirm your account. You should receive an email with a link which once clicked will provision your new account.
+Once you have signed up you will need to confirm your account. You should receive an email with a link, which once clicked will provision your new account.
 
 ![alt text][confirm]
 
@@ -40,6 +40,7 @@ For this exercise we will need to download and install the Mendix Desktop modele
 [https://appstore.home.mendix.com/link/modelers/](https://appstore.home.mendix.com/link/modelers/)
 
 Download the 7.22.2 release or higher.
+
 ![alt text][download]
 
 
@@ -55,20 +56,22 @@ Install the software on your windows machine or virtual machine. The installer w
 
 
 ### Creating your project
-To get started with building your first smart application you will need to import up the starter package in the modeler and setup your own project.
+To get started with building your first smart application you will need to import the starter package in the modeler and setup your own project.
 
-To do so go to file -> Import Project Package.
+To do so go to File -> Import Project Package.
 
 ![alt text][importpackage]
 
-The modeler will then ask you to name your app and choose a location on your file system to store it. When you press OK the platform will create you a new Team Server repository, which is the Mendix version control system.
+The modeler will then ask you to name your app and choose a location on your file system to store it. When you press OK the platform will create you a new Team Server repository. Team Server is the Mendix hosted version control system.
 
 ![alt text][nameproject]
 
 Once complete you'll be ready to begin the build of your smart app.
 
 ### Creating the Access Keys
-Before we can connect to our devices data we need to ensure that we have created an application and device in the Things Network console.
+If you want to connect your Mendix app up to your own data you will need to add a device and generate an application key in the Things Network console. 
+
+If you don't have a device feel free skip this step and use the example keys provided here: [Credential Details](./credentials/example.md)
 
 Follow these guides to get your first device setup:
 [https://www.thethingsnetwork.org/docs/applications/add.html](https://www.thethingsnetwork.org/docs/applications/add.html)
@@ -120,8 +123,8 @@ Double click on the MQTT Subscribe actvity and fill in the following:
 |Broker port|1883 (8883 is also supported but requires additional certs)|
 |Broker organisation|empty|
 |Timeout|60|
-|Username|Application ID set in the Things Network|
-|Password|The Access Key setup earlier in this [step](#Creating-the-Access-Keys)|
+|Username|Application ID set in the Things Network or [example credentials](./credentials/example.md)|
+|Password|The Access Key setup earlier in this [step](#Creating-the-Access-Keys) or [example credentials](./credentials/example.md)|
 |Topic Name|+/devices/+/up|
 |On Message Microflow|[Create a new Microflow](#On-Message-Microflow)|
 |CA|empty|
@@ -165,7 +168,11 @@ Using a browser we can open up our app and press the subscribe button. If succes
 To process the payload we need to utilize the Mendix Import Mapping functionality. This allows developers to import data from XML and JSON into Mendix entities.
 
 ### Step 1 
-The first thing we need to do is get the JSON that is returned in the payload of our microflow. This will appear in the Mendix console when data is sent to The Things Network, If you don't see this then check your connection. You will see a log entry with something similar to the following:
+The first thing we need to do is get the JSON that is returned in the payload of our microflow. This will appear in the Mendix console when data is sent to The Things Network, If you don't see this then check your connection. 
+
+![alt text][console]
+
+You will see a log entry with something similar to the following:
 
 `{
     "app_id": "ttn-node-simon",
@@ -210,10 +217,12 @@ Copy this to your clipboard.
 Using the copied JSON we need to create a JSON Structure.
 
 Right click on the MyFirstModule in the project explorer, select add other and click on JSON Structure.
+
 ![alt text][addjson]
 
 
 Paste the copied JSON into the dialog box then click on format and Refresh.
+
 ![alt text][jsonstructure]
 
 ### Step 3
@@ -301,6 +310,7 @@ Connect up the new subscribe to TTN button to the microflow you created earlier.
 
 ### Connect up microflow timer
 Double click on the microflow timer widget and on the microflow option select
+
 ![alt text][microflowtimerselect]
 
 ### Configure Homepage
@@ -314,11 +324,13 @@ Click subscribe to TTN and you should see data appear in the dashboard.
 
 Congratulations you've built your first IoT connected app!
 
+![alt text][dashboard]
+
 
 ## Making a change
 
 ### Adding a decision
-Now that we are able to visualise our sensor data the next step is to add proactive actional alerts.
+Now that we are able to visualise our sensor data the next step is to add proactive actionable alerts.
 
 We want to trigger an alert if our light levels go below a certain level.
 
@@ -395,3 +407,5 @@ Using the project explorer drag the snippet from the explorer onto the page belo
 [createalert]: ./img/createalert.png "create alert"
 [alertssnippet]: ./img/alertssnippet.png "Alerts Snippet"
 [drawexclusivesplit]: ./img/drawexclusivesplit.gif "Alerts Snippet"
+[console]: ./img/console.png "console"
+[dashboard]: ./img/dashboard.png "dashboard"
