@@ -71,11 +71,9 @@ Follow these guides to get your first device set up:
 Once set up you need to generate an access key. This can be done in the settings section of the application. 
 
 The key needs to have at least message privledges.
-
     ![alt text][accesskey]
 
 The access key value can be found on the overview page of the application. You will need to use the key later in the mqtt setup.
-
     ![alt text][keys]
 
 
