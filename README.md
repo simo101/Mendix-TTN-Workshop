@@ -79,33 +79,36 @@ The access key value can be found on the overview page of the application. You w
 
 ## Connecting to the MQTT Broker
 ### Downloading the client
-In order to get data from The Things Network (TTN) we need to subscribe to the MQTT Broker. This will allow us to get notified when new data is sent from our device.
+In order to get data from The Things Network (TTN) you need to subscribe to the MQTT Broker. This will allow you to get notified when new data is sent from your device.
 
-The first thing we need to do is download the MQTT Client from the appstore.
+The first thing you need to do is download the MQTT Client from the App Store.
 
-Inside the modeler click on the shopping icon in the top right hand corner and search for MQTT. Then download the client into the project.
+1. In the Modeler, click on the shopping icon in the top right hand corner and search for MQTT.
+2. Download the MQTT Client module into the project.
 
-![alt text][appstore]
+    ![alt text][appstore]
 
 ### Subscribing to the topic
 
-Next we need to call a microflow to subscribe to the MQTT Topic. Right click on the MyFirstModule in the project explorer and select add microflow.
+Next we need to call a microflow to subscribe to the MQTT Topic.
 
-![alt text][addmicroflow]
+1. Right click **MyFirstModule** in the Project Explorer and select **Add microflow**.
 
-Give the microflow an approriate name.
+    ![alt text][addmicroflow]
 
-![alt text][namemicroflow]
+2. Give the microflow an approriate name.
 
-Inside the microflow editor select the Action Activity from the menu bar at the top and drag the activity onto the line.
+    ![alt text][namemicroflow]
 
-![alt text][microflowactivity]
+3. Once you're in the microflow editor, select the **Action** activity from the menu bar at the top and drag the activity onto the line.
 
-Double click on the action activity and select mqtt subscribe from the menu.
+    ![alt text][microflowactivity]
 
-![alt text][selectmqttsubscribe]
+4. Double click on the action activity and select **MQTT subscribe** from the menu.
 
-Double click on the MQTT Subscribe actvity and fill in the following:
+    ![alt text][selectmqttsubscribe]
+
+5. Double click the MQTT Subscribe actvity top open its properties and fill in the following:
 
 |Setting|Value|
 |---|---|
@@ -125,40 +128,46 @@ Double click on the MQTT Subscribe actvity and fill in the following:
 
 ### On Message Microflow
 
-On the MQTT Subscribe option click select and then new. Give the microflow a name and click ok. The On Message Microflow will require two string parameters. One for the Payload and one for the Topic. 
+1. On the MQTT Subscribe option click **select** and then **New**.
+2. Give the microflow a name and click **OK**. The On Message Microflow will require two string parameters. One for the Payload and one for the Topic. 
+2. Click on the parameter icon in the topbar and add two parameters: **Topic** and **Payload**.
+    ![alt text][parameteroption]
+    
+    ![alt text][processmicroflow]
 
-![alt text][processmicroflow]
+    You now need to add a log message to the flow to ensure that everything is working correctly.
 
-To create the microflow parameter click on the parameter icon on the topbar.
+3. Add a new activity to the line and select **Log message**. Then configure the log message like so:
 
-![alt text][parameteroption]
+    ![alt text][logmessage]
 
-Once we have the parameters added we need to add a log message to the flow to ensure that everything is working correctly.
+### Add subscribing microflow to page
 
-Add a new activity to the line and select log message. Then configure the log message like so:
-
-![alt text][logmessage]
-
-### Add subscribing microflow to page.
-Open up the home page by double clicking on it in the project explorer.
-
-Click add widget from the menu bar. Using the dialog box search for microflow and select microflow button. Then place the button on the page.
-
-Finally select the microflow that we created earlier to subscribe to the topic.
+1. Open the **Home** page by double clicking on it in the Project Explorer.
+2. Click **Add widget...** from the menu bar.
+3. Search for *microflow* and select **Call microflow button**.
+4. Click on the page where you want to add the button.
+5. Finally, select the microflow that you created earlier to subscribe to the topic.
 
 
 ### Running the app
-We've now built the required functionality to subscribe. To run the app and test it click on the run locally button. This will start the app running on http://localhost:8080.
 
-![alt text][runlocally]
+You've now built the required functionality to subscribe.
 
-Using a browser we can open up our app and press the subscribe button. If successful our app should be now subscribed to the Things Network.
+1. Run the app and test it by selecting the **Run locally** option in the deployment drop-down. This will start the app, running on http://localhost:8080.
+
+    ![alt text][runlocally]
+
+2. Click **View** to open the app.
+3. Click **Subscribe** (thge button you added before). If successful, your app should be now subscribed to The Things Network.
 
 ## Processing the Payload
-To process the payload we need to utilize the Mendix Import Mapping functionality. This allows developers to import data from XML and JSON into Mendix entities.
+
+To process the payload you need to utilize the Mendix Import Mapping functionality. This allows developers to import data from XML and JSON into Mendix entities.
 
 ### Step 1 
-The first thing we need to do is get the JSON that is returned in the payload of our microflow. This will appear in the Mendix console when data is sent to The Things Network, If you don't see this then check your connection. 
+
+The first thing you need to do is get the JSON that is returned in the payload of our microflow. This will appear in the Mendix console when data is sent to The Things Network. If you don't see this, check your connection. 
 
 ![alt text][console]
 
@@ -204,45 +213,54 @@ You will see a log entry with something similar to the following:
 Copy this to your clipboard.
 
 ### Step 2
-Using the copied JSON we need to create a JSON Structure.
 
-Right click on the MyFirstModule in the project explorer, select add other and click on JSON Structure.
+Using the copied JSON, you need to create a JSON Structure.
 
-![alt text][addjson]
+1. Right click MyFirstModule in the Project Explorer, open **Add other** and select **JSON structure**.
 
+    ![alt text][addjson]
 
-Paste the copied JSON into the dialog box then click on format and Refresh.
+2. Paste the copied JSON into the dialog box.
+3. Click on **Format** and then **Refresh**.
 
-![alt text][jsonstructure]
+    ![alt text][jsonstructure]
 
 ### Step 3
-Now that we have our data payload represented we need to create an import mapping.
 
-Right click on the MyFirstModule in the project explorer and select import mapping.
+Now that you have your data payload represented you need to create an import mapping.
 
-Inside the import mapping select the JSON structure and click on Expand All.
+1. Right click **MyFirstModule** in the Project Explorer, open **Add other** and select **Import mapping**.
+2. Inside the import mapping, select the JSON structure and click **Expand All**.
 
-![alt text][importmapper]
+    ![alt text][importmapper]
 
-We only are only interested in some of the data from the response so we have selected only the fields required.
+    We are only interested in some of the data from the response so we have selected only the fields required.
 
-Using the mapping we can map data from the JSON response to our domain model. This can be done automatically for you using the Map automatically button. 
+    Using the mapping we can map data from the JSON response to our domain model.
+    
+3. Click **Map automatically**. 
 
-We are going to use an entity we have available in the starter app and get the mapper to generate the new attributes for us. Drag the Device Data entity from the connector into the space provided.
+    You are going to use an entity that is available in the starter app and get the mapper to generate the new attributes.
+    
+4. Drag the **Device Data** entity from the connector into the space provided.
 
-![alt text][dragdataentry]
+    ![alt text][dragdataentry]
 
-Click the button Map attributes by name. This will map one attribute the time. 
+5. Click **Map attributes by name**. This will map one attribute the time. 
 
-Then click on select on the time attribute line. We need to convert the date string into a date. Select the microflow "ConvertToDateTime".
+6. Click **Select** on the time attribute line.
 
-![alt text][converttodatetime]
+    You need to convert the date string into a date.
+    
+7. Select the microflow **ConvertToDateTime**.
 
-Next we need to generate the attributes for our data mapping.
+    ![alt text][converttodatetime]
 
-Click Map Automatically button and click close.
+    Next you need to generate the attributes for our data mapping.
 
-![alt text][mapautomatically]
+8. Click **Map Automatically** and then **Close**.
+
+    ![alt text][mapautomatically]
 
 ### Step 4
 Now that our import mapping is complete we can use it in our microflow to import the data.
